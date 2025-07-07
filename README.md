@@ -27,18 +27,5 @@ from boundingengine.algorithms import manski
 manski.bound(query, data)
 ```
 
-# .readthedocs.yml
-version: 2
-sphinx:
-  configuration: docs/conf.py
-python:
-  install:
-    - method: pip
-      path: .
-    - requirements: docs/requirements.txt
 
 # docs/requirements.txt
-sphinx
-sphinx_rtd_theme
-rpy2
-jpype1

@@ -1,0 +1,4 @@
+sphinx
+sphinx_rtd_theme
+rpy2
+jpype1
