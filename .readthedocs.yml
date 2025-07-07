@@ -12,3 +12,6 @@ python:
 build:
   tools:
     python: "3.10"
+  commands:
+    - pip install .
+    - sphinx-build -b html docs/source docs/build
