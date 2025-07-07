@@ -1,9 +1,13 @@
 version: 2
+
 sphinx:
   configuration: docs/source/conf.py
+
+build:
+  os: ubuntu-22.04  # optional but modern and clean
 
 python:
   install:
     - method: pip
       path: .
-    - requirements: docs/requirements.txt
+    - requirements: docs/source/requirements.txt
