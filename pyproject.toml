@@ -21,3 +21,4 @@ build-backend = "setuptools.build_meta"
 r = ["rpy2"]
 java = ["jpype1"]
 full = ["rpy2", "jpype1"]
+docs = ["sphinx", "sphinx_rtd_theme"]
