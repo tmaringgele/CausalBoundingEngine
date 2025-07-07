@@ -27,5 +27,3 @@ from boundingengine.algorithms import manski
 manski.bound(query, data)
 ```
 
-
-# docs/requirements.txt
