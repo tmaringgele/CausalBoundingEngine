@@ -1,0 +1,23 @@
+[project]
+name = "causalboundingengine"
+version = "0.1.0"
+description = "A framework for causal bounding algorithms"
+authors = [{name = "Your Name", email = "your@email.com"}]
+readme = "README.md"
+license = {text = "MIT"}
+dependencies = [
+  "pandas",
+  "numpy",
+  "rpy2",
+  "jpype1",
+]
+requires-python = ">=3.8"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project.optional-dependencies]
+r = ["rpy2"]
+java = ["jpype1"]
+full = ["rpy2", "jpype1"]
