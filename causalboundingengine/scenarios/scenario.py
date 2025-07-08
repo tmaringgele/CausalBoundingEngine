@@ -2,6 +2,9 @@
 from causalboundingengine.utils.data import Data
 
 class Scenario:
+# Base class for scenarios in the Causal Bounding Engine.
+# Each scenario should define its own AVAILABLE_ALGORITHMS dictionary.
+
     AVAILABLE_ALGORITHMS = {}  # to be defined in each subclass
 
     def __init__(self, X, Y, Z=None):
@@ -14,6 +17,7 @@ class Scenario:
 
 
 class AlgorithmDispatcher:
+# A dispatcher that dynamically binds methods to the scenario's algorithms.
     def __init__(self, scenario, query_type):
         self.scenario = scenario
         self.query_type = query_type
