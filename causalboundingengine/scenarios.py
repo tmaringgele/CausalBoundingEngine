@@ -1,4 +1,4 @@
-from causalboundingengine.scenarios.scenario import Scenario
+from causalboundingengine.scenario import Scenario
 from causalboundingengine.algorithms.conf.tianpearl import TianPearl
 from causalboundingengine.algorithms.conf.manski import Manski
 
