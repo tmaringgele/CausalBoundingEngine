@@ -1,6 +1,4 @@
-from abc import ABC, abstractmethod
-import time
-from datetime import datetime
+
 from causalboundingengine.utils.data import Data
 
 class Scenario:
@@ -23,5 +21,10 @@ class AlgorithmDispatcher:
     def __getattr__(self, name):
         def _wrapped(*args, **kwargs):
             cls = self.scenario.AVAILABLE_ALGORITHMS[self.query_type][name]()
-            return cls.bound_ATE(**self.scenario.data.unpack(), *args, **kwargs)
+            method = getattr(cls, f'bound_{self.query_type}')
+            
+            # Combine unpacked data and user kwargs
+            combined_kwargs = {**self.scenario.data.unpack(), **kwargs}
+            
+            return method(*args, **combined_kwargs)
         return _wrapped
