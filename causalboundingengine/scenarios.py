@@ -1,6 +1,7 @@
 from causalboundingengine.scenario import Scenario
 from causalboundingengine.algorithms.conf.tianpearl import TianPearl
 from causalboundingengine.algorithms.conf.manski import Manski
+from causalboundingengine.algorithms.conf.entropybounds import Entropybounds
 
 
 
@@ -11,9 +12,11 @@ class BinaryConf(Scenario):
     AVAILABLE_ALGORITHMS = {
         'ATE': {
             'manski': Manski,
-            'tianpearl': TianPearl
+            'tianpearl': TianPearl,
+            'entropybounds': Entropybounds
         },
         'PNS': {
-            'tianpearl': TianPearl
+            'tianpearl': TianPearl,
+            'entropybounds': Entropybounds
         }
     }
