@@ -1,22 +1,34 @@
+import logging
 from abc import ABC, abstractmethod
-import numpy as np
 from causalboundingengine.utils.alg_util import AlgUtil
+
+logger = logging.getLogger(__name__)
 
 class Algorithm(ABC):
     def bound_ATE(self, *args, **kwargs) -> tuple[float, float]:
         failed = False
-
         try:
-            lower, upper = self._compute_bounds(*args, **kwargs)
-        except Exception:
-            print("Error in computing bounds, returning trivial bounds.")
-            ## print exception
+            lower, upper = self._compute_ATE(*args, **kwargs)
+        except Exception as e:
+            logger.warning("Failed to compute ATE bounds: %s", e)
             failed = True
             lower, upper = None, None
 
-        lower, upper = AlgUtil.flatten_bounds_to_trivial_ceils('ATE', lower, upper, failed)
-        return lower, upper
+        return AlgUtil.flatten_bounds_to_trivial_ceils('ATE', lower, upper, failed)
 
-    @abstractmethod
-    def _compute_bounds(self, *args, **kwargs) -> tuple[float, float]:
-        pass
+    def bound_PNS(self, *args, **kwargs) -> tuple[float, float]:
+        failed = False
+        try:
+            lower, upper = self._compute_PNS(*args, **kwargs)
+        except Exception as e:
+            logger.warning("Failed to compute PNS bounds: %s", e)
+            failed = True
+            lower, upper = None, None
+
+        return AlgUtil.flatten_bounds_to_trivial_ceils('PNS', lower, upper, failed)
+
+    def _compute_ATE(self, *args, **kwargs) -> tuple[float, float]:
+        raise NotImplementedError("This algorithm does not implement ATE bounding.")
+
+    def _compute_PNS(self, *args, **kwargs) -> tuple[float, float]:
+        raise NotImplementedError("This algorithm does not implement PNS bounding.")
