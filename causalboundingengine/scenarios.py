@@ -1,8 +1,8 @@
 from causalboundingengine.scenario import Scenario
-from causalboundingengine.algorithms.conf.tianpearl import TianPearl
-from causalboundingengine.algorithms.conf.manski import Manski
-from causalboundingengine.algorithms.conf.entropybounds import Entropybounds
-from causalboundingengine.algorithms.iv.zhangbareinboim import ZhangBareinboim
+from causalboundingengine.algorithms.tianpearl import TianPearl
+from causalboundingengine.algorithms.manski import Manski
+from causalboundingengine.algorithms.entropybounds import Entropybounds
+from causalboundingengine.algorithms.zhangbareinboim import ZhangBareinboim
 
 
 
@@ -10,6 +10,20 @@ from causalboundingengine.algorithms.iv.zhangbareinboim import ZhangBareinboim
 
 # Binary Confounding
 class BinaryConf(Scenario):
+    AVAILABLE_ALGORITHMS = {
+        'ATE': {
+            'manski': Manski,
+            'tianpearl': TianPearl,
+            'entropybounds': Entropybounds
+        },
+        'PNS': {
+            'tianpearl': TianPearl,
+            'entropybounds': Entropybounds
+        }
+    }
+
+# Binary Instrumental Variable
+class BinIV(Scenario):
     AVAILABLE_ALGORITHMS = {
         'ATE': {
             'manski': Manski,
