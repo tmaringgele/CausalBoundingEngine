@@ -5,3 +5,5 @@ math
 pulp
 pandas
 itertools
+os
+subprocess

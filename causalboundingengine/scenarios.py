@@ -20,7 +20,8 @@ class BinaryConf(Scenario):
         },
         'PNS': {
             'tianpearl': TianPearl,
-            'entropybounds': Entropybounds
+            'entropybounds': Entropybounds,
+            'causaloptim': CausalOptim
         }
     }
 
@@ -31,6 +32,7 @@ class BinaryIV(Scenario):
             'causaloptim': CausalOptim
         },
         'PNS': {
+            'causaloptim': CausalOptim
         }
     }
 
