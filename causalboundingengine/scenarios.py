@@ -3,6 +3,7 @@ from causalboundingengine.algorithms.tianpearl import TianPearl
 from causalboundingengine.algorithms.manski import Manski
 from causalboundingengine.algorithms.entropybounds import Entropybounds
 from causalboundingengine.algorithms.zhangbareinboim import ZhangBareinboim
+from causalboundingengine.algorithms.causaloptim import CausalOptim
 
 
 
@@ -14,7 +15,8 @@ class BinaryConf(Scenario):
         'ATE': {
             'manski': Manski,
             'tianpearl': TianPearl,
-            'entropybounds': Entropybounds
+            'entropybounds': Entropybounds,
+            'causaloptim': CausalOptim
         },
         'PNS': {
             'tianpearl': TianPearl,
@@ -23,16 +25,12 @@ class BinaryConf(Scenario):
     }
 
 # Binary Instrumental Variable
-class BinIV(Scenario):
+class BinaryIV(Scenario):
     AVAILABLE_ALGORITHMS = {
         'ATE': {
-            'manski': Manski,
-            'tianpearl': TianPearl,
-            'entropybounds': Entropybounds
+            'causaloptim': CausalOptim
         },
         'PNS': {
-            'tianpearl': TianPearl,
-            'entropybounds': Entropybounds
         }
     }
 
