@@ -20,7 +20,7 @@ class Scenario:
         Args:
             X: Treatment variable (array-like).
             Y: Outcome variable (array-like).
-            Z: Optional instrument/confounder (array-like).
+            Z: Optional instrument (array-like).
         """
         self.data = Data(X, Y, Z)
         self.ATE = AlgorithmDispatcher(self, 'ATE')

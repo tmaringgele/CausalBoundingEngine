@@ -2,3 +2,6 @@ abc
 numpy
 cvxpy
 math
+pulp
+pandas
+itertools
