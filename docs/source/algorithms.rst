@@ -3,6 +3,9 @@ Algorithms Reference
 
 This page provides detailed documentation for all algorithms available in CausalBoundingEngine.
 
+.. note::
+   All algorithms are implementations of published research. For complete citations, references, and proper attribution, see the :doc:`references` page. Please cite the original papers when using these algorithms in your research.
+
 Algorithm Overview
 ------------------
 
@@ -65,7 +68,7 @@ Core Algorithms
 Manski Bounds
 ~~~~~~~~~~~~~
 
-**Reference**: Manski, C. F. (1989). Anatomy of the selection problem. Journal of Human Resources, 24(3), 343-360.
+**Reference**: Manski, C. F. (1990). Nonparametric Bounds on Treatment Effects. *The American Economic Review*, 80(2), 319-323. See :doc:`references` for complete citation.
 
 **Description**: Provides the most conservative bounds on the ATE under no additional assumptions beyond the observed data. These bounds are derived by considering the worst-case scenarios for the unobserved potential outcomes.
 
@@ -108,7 +111,7 @@ For binary outcomes, the ATE bounds are:
 Tian-Pearl Bounds
 ~~~~~~~~~~~~~~~~~
 
-**Reference**: Tian, J., & Pearl, J. (2000). Probabilities of causation: Bounds and identification. Annals of Mathematics and Artificial Intelligence, 28(1-4), 287-313.
+**Reference**: Tian, J., & Pearl, J. (2000). Probabilities of Causation: Bounds and Identification. *Annals of Mathematics and Artificial Intelligence*, 28(1-4), 287-313. See :doc:`references` for complete citation.
 
 **Description**: Nonparametric bounds that use the joint distribution of treatment and outcome to derive tighter bounds than Manski, particularly for PNS.
 
@@ -160,7 +163,7 @@ For PNS:
 AutoBound
 ~~~~~~~~~
 
-**Reference**: Duarte, G., Finkelstein, N., Knox, D., Mummolo, J., & Shpitser, I. (2021). An automated approach to causal inference in discrete settings. Journal of the American Statistical Association.
+**Reference**: Duarte, G., Finkelstein, N., Knox, D., Mummolo, J., & Shpitser, I. (2023). An Automated Approach to Causal Inference in Discrete Settings. *Journal of the American Statistical Association*, 1-12. See :doc:`references` for complete citation.
 
 **Description**: A general-purpose algorithm that formulates causal bounding as a linear programming problem. Can handle complex causal graphs and both confounded and IV settings.
 
@@ -203,7 +206,7 @@ AutoBound represents the causal problem using:
 EntropyBounds
 ~~~~~~~~~~~~~
 
-**Reference**: Jiang, Z., Shpitser, I. (2021). Approximate causal effect identification under weak confounding. International Conference on Artificial Intelligence and Statistics.
+**Reference**: Jiang, Z., & Shpitser, I. (2020). Approximate Causal Effect Identification under Weak Confounding. *Proceedings of the 37th International Conference on Machine Learning*, 4740-4750. See :doc:`references` for complete citation.
 
 **Description**: Uses mutual information constraints to bound causal effects under the assumption of "weak confounding" - limited dependence between confounders and observed variables.
 
@@ -257,7 +260,7 @@ CausalOptim
 
 **Dependencies**: R, rpy2, causaloptim R package
 
-**Reference**: Sachs, M., Jonsson, E., Gabriel, E., Sjölander, A. (2022). causaloptim: An Interface to Specify Causal Graphs and Compute Bounds on Causal Effects. R package.
+**Reference**: Sachs, M. C., Sjölander, A., & Gabriel, E. E. (2022). A General Method for Deriving Tight Symbolic Bounds on Causal Effects. *Journal of Computational and Graphical Statistics*, 31(2), 496-510. See :doc:`references` for complete citation.
 
 **Description**: Uses symbolic computation to derive analytic bounds on causal effects. Integrates with the R package ``causaloptim`` for graph specification and optimization.
 
@@ -310,9 +313,7 @@ Zaffalonbounds
 
 **Dependencies**: Java, jpype1, CREMA/CREDICI libraries
 
-**Reference**: 
-   - Zaffalon, M., et al. CREMA: https://github.com/IDSIA/crema
-   - Antonucci, A., et al. CREDICI: https://github.com/IDSIA/credici
+**Reference**: Zaffalon, M., Antonucci, A., & Cabañas, R. (2022). Structural Causal Models Are (Solvable by) Credal Networks. *Proceedings of the 25th International Conference on Artificial Intelligence and Statistics*, 186. Uses CREMA and CREDICI libraries. See :doc:`references` for complete citation.
 
 **Description**: Uses credal networks and EM-based learning to compute bounds. Based on the CREMA and CREDICI Java libraries developed at IDSIA.
 
@@ -359,7 +360,7 @@ Specialized Algorithms
 ZhangBareinboim
 ~~~~~~~~~~~~~~~
 
-**Reference**: Zhang, J., & Bareinboim, E. (2017). Non-parametric path analysis in structural causal models. Advances in Neural Information Processing Systems.
+**Reference**: Zhang, J., & Bareinboim, E. (2018). Equality of Opportunity in Classification: A Causal Approach. *Proceedings of the 32nd Conference on Neural Information Processing Systems*. See :doc:`references` for complete citation.
 
 **Description**: Designed specifically for continuous instrumental variable settings. Uses linear programming to handle compliance types in IV analysis.
 

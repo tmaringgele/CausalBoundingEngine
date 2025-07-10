@@ -49,6 +49,9 @@ Features
 - **External Engine Support**: Integration with R (via rpy2) and Java (via jpype1)
 - **Extensible Design**: Easy to add new algorithms and scenarios
 
+.. note::
+   **Attribution**: CausalBoundingEngine integrates algorithms from multiple published research papers. Please see the :doc:`references` section for complete citations and attribution when using this library in your research.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -61,6 +64,7 @@ Features
    extending
    api_reference
    examples
+   references
    contributing
 
 Indices and tables

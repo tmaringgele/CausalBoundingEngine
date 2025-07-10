@@ -3,6 +3,9 @@ Scenarios Reference
 
 Scenarios in CausalBoundingEngine organize algorithms by the causal setting and data structure. Each scenario defines which algorithms are applicable and provides a unified interface for accessing them.
 
+.. note::
+   All scenarios use algorithms from published research. For complete citations and references, see the :doc:`references` page.
+
 Scenario Architecture
 ---------------------
 
