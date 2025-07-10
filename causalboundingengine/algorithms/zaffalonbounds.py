@@ -75,8 +75,8 @@ class Zaffalonbounds(Algorithm):
         
 
         # Resolve jars relative to this file
-        jar_zaffalon = os.path.join(this_dir, "zaffalon_util", "zaffalon.jar")
-        jar_credici = os.path.join(this_dir, "zaffalon_util", "credici.jar")
+        jar_zaffalon = os.path.join(this_dir, "zaffalonbounds_util", "zaffalon", "zaffalon.jar")
+        jar_credici = os.path.join(this_dir, "zaffalonbounds_util", "credici.jar")
         if not jpype.isJVMStarted():
             jpype.startJVM(classpath=[jar_zaffalon, jar_credici])
 
@@ -89,7 +89,7 @@ class Zaffalonbounds(Algorithm):
         String = jpype.JClass("java.lang.String")
         query = String(query)
 
-        BinaryTask = jpype.JClass("binaryIV.BinaryIVTask")
+        BinaryTask = jpype.JClass("zaffalon.BinaryIVTask")
         task = BinaryTask(stream, query, jpype.JBoolean(isConf))
         result = task.call()
                 

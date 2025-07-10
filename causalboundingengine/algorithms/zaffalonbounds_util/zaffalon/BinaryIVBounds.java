@@ -1,4 +1,4 @@
-package java;
+package zaffalon;
 
 import ch.idsia.credici.inference.CausalMultiVE;
 import ch.idsia.credici.inference.CausalVE;
@@ -34,15 +34,17 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
-public class BinaryConfBounds {
-    public static TIntIntMap[] getDataFromCSV(InputStream inputStream, int X, int Y) throws Exception {
+public class BinaryIVBounds {
+    public static TIntIntMap[] getDataFromCSV(InputStream inputStream, int Z, int X, int Y) throws Exception {
         List<TIntIntMap> dataList = new ArrayList<>();
         try (Reader reader = new InputStreamReader(inputStream);
              CSVParser csv = new CSVParser(reader, CSVFormat.DEFAULT.withFirstRecordAsHeader())) {
             for (CSVRecord record : csv) {
+                int zVal = Integer.parseInt(record.get("Z"));
                 int xVal = Integer.parseInt(record.get("X"));
                 int yVal = Integer.parseInt(record.get("Y"));
                 TIntIntMap sample = new TIntIntHashMap();
+                sample.put(Z, zVal);
                 sample.put(X, xVal);
                 sample.put(Y, yVal);
                 dataList.add(sample);
@@ -53,17 +55,16 @@ public class BinaryConfBounds {
     
 
 
-    public static double[] getBounds(TIntIntMap[] data, int maxIter, int runs, String query, int X, int Y, int U)
-            throws Exception {
+    public static double[] getBoundsForBinaryIV(TIntIntMap[] data , int maxIter, int runs, String query, int Z, int X, int Y, int U) throws Exception {
 
-        //int X = 0, Y = 1, U = 2;
+
         
 
         // Endogenous DAG (only X -> Y among observed endogenous variables)
-        SparseDirectedAcyclicGraph endoDAG = DAGUtil.build("(0,1)");
+        SparseDirectedAcyclicGraph endoDAG = DAGUtil.build("(1,2)");
 
-        // Complete causal DAG including exogenous influences (U->X, U->Y, X->Y)
-        SparseDirectedAcyclicGraph causalDAG = DAGUtil.build("(2,0),(2,1),(0,1)");
+        // Complete causal DAG including exogenous influences (Z->X, U->X, U->Y, X->Y)
+        SparseDirectedAcyclicGraph causalDAG = DAGUtil.build("(0,1),(3,1),(3,2),(1,2)");
 
         // Build the SCM with binary variables (cardinality 2) and the specified DAG
         StructuralCausalModel scm = CausalBuilder.of(causalDAG, 2)

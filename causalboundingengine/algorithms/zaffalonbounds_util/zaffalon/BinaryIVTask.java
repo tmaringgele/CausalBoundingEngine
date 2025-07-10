@@ -1,4 +1,4 @@
-package java;
+package zaffalon;
 
 import gnu.trove.map.TIntIntMap;
 import java.io.InputStream;
@@ -7,16 +7,16 @@ import java.util.concurrent.Callable;
 public class BinaryIVTask {
 
     //Compile:
-    // javac -cp credici.jar binaryIV/*.java
+    // javac -cp credici.jar zaffalon/*.java
     //Build JAR:
-    // jar cf binaryIV/zaffalon.jar -C . binaryIV
+    // jar cf zaffalon.jar -C . zaffalon
 
     //Verify JAR:
-    // jar tf binaryIV/zaffalon.jar
+    // jar tf zaffalon.jar
 
     //You should see something like:
-    // binaryIV/BinaryIVAteSimulationTask.class
-    // binaryIV/AteBounds.class
+    // zaffalon/BinaryConfBounds.class
+    // zaffalon/BinaryIVBounds.class
 
 
     private final InputStream inputStream;
