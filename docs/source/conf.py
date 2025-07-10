@@ -38,6 +38,15 @@ exclude_patterns = []
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
+# Theme options
+html_theme_options = {
+    'logo_only': True,
+    'display_version': True,
+}
+
+# Logo configuration
+html_logo = '_static/cbe_logo.png'
+
 # Napoleon settings
 napoleon_google_docstring = True
 napoleon_numpy_docstring = True
