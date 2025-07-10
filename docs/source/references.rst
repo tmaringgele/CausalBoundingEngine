@@ -66,13 +66,15 @@ Tian-Pearl Bounds
 Zaffalon Bounds
 ~~~~~~~~~~~~~~~
 
-**Authors**: Zaffalon, M., Antonucci, A., & Cabañas, R.
+**Authors**: Zaffalon, M., Antonucci, A., Cabañas, R., Huber, D., & Azzimonti, D.
 
 **Dependencies**:
    - **CREMA**: https://github.com/IDSIA/crema
    - **CREDICI**: https://github.com/IDSIA/credici
 
-**Reference**: Zaffalon, M., Antonucci, A., & Cabañas, R. (2020). Structural Causal Models Are (Solvable by) Credal Networks. *Proceedings of the 34th Conference on Neural Information Processing Systems*.
+**Reference**: Zaffalon, M., Antonucci, A., Cabañas, R., Huber, D., & Azzimonti, D. (2022). Bounding Counterfactuals under Selection Bias. *Proceedings of The 11th International Conference on Probabilistic Graphical Models*, 289-300.
+
+**URL**: https://proceedings.mlr.press/v186/zaffalon22a/zaffalon22a.pdf
 
 **Description**: Uses credal networks to compute bounds on causal effects. The implementation leverages Java libraries CREMA and CREDICI for probabilistic inference with imprecise probabilities.
 
@@ -201,14 +203,14 @@ For Zaffalon Bounds
 
 .. code-block:: bibtex
 
-   @inproceedings{zaffalon2022structural,
-     title={Structural Causal Models Are (Solvable by) Credal Networks},
-     author={Zaffalon, Marco and Antonucci, Alessandro and Caba{\~n}as, Rafael},
-     booktitle={Proceedings of the 25th International Conference on Artificial Intelligence and Statistics},
-     volume={186},
-     pages={4975--4985},
+   @inproceedings{zaffalon2022bounding,
+     title={Bounding Counterfactuals under Selection Bias},
+     author={Zaffalon, Marco and Antonucci, Alessandro and Caba{\~n}as, Rafael and Huber, Denis and Azzimonti, Dario},
+     booktitle={Proceedings of The 11th International Conference on Probabilistic Graphical Models},
+     pages={289--300},
      year={2022},
      organization={PMLR},
+     editors={Salmer{\'o}n, Antonio and Rum{\'\i}, Rafael},
      url={https://proceedings.mlr.press/v186/zaffalon22a/zaffalon22a.pdf}
    }
 

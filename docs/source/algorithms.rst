@@ -313,7 +313,7 @@ Zaffalonbounds
 
 **Dependencies**: Java, jpype1, CREMA/CREDICI libraries
 
-**Reference**: Zaffalon, M., Antonucci, A., & Cabañas, R. (2022). Structural Causal Models Are (Solvable by) Credal Networks. *Proceedings of the 25th International Conference on Artificial Intelligence and Statistics*, 186. Uses CREMA and CREDICI libraries. See :doc:`references` for complete citation.
+**Reference**: Zaffalon, M., Antonucci, A., Cabañas, R., Huber, D., & Azzimonti, D. (2022). Bounding Counterfactuals under Selection Bias. *Proceedings of The 11th International Conference on Probabilistic Graphical Models*, 289-300. Uses CREMA and CREDICI libraries. See :doc:`references` for complete citation.
 
 **Description**: Uses credal networks and EM-based learning to compute bounds. Based on the CREMA and CREDICI Java libraries developed at IDSIA.
 
