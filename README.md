@@ -315,7 +315,7 @@ See our [Contributing Guide](https://causalboundingengine.readthedocs.io/en/late
 - 🔧 New algorithm implementations
 - 📊 Additional causal scenarios  
 - 🐛 Bug fixes and improvements
-- 📚 Documentation and examples
+- 📚 Adding some tests
 - 🚀 Performance optimizations
 
 ## Citation
