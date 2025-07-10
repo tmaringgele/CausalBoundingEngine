@@ -360,7 +360,7 @@ Specialized Algorithms
 ZhangBareinboim
 ~~~~~~~~~~~~~~~
 
-**Reference**: Zhang, J., & Bareinboim, E. (2018). Equality of Opportunity in Classification: A Causal Approach. *Proceedings of the 32nd Conference on Neural Information Processing Systems*. See :doc:`references` for complete citation.
+**Reference**: Zhang, J., & Bareinboim, E. (2021). Bounding Causal Effects on Continuous Outcome. *Proceedings of the AAAI Conference on Artificial Intelligence*, 35(13), 12207-12215. See :doc:`references` for complete citation.
 
 **Description**: Designed specifically for continuous instrumental variable settings. Uses linear programming to handle compliance types in IV analysis.
 

@@ -1,9 +1,7 @@
 References and Credits
 ======================
 
-CausalBoundingEngine i**Reference**: Zaffalon, M., Antonucci, A., & Cabañas, R. (2022). Structural Causal Models Are (Solvable by) Credal Networks. *Proceedings of the 25th International Conference on Artificial Intelligence and Statistics*, 186, 4975-4985.
-
-**URL**: https://proceedings.mlr.press/v186/zaffalon22a/zaffalon22a.pdftegrates several state-of-the-art algorithms and methods for causal effect bounding. We gratefully acknowledge the authors and contributors of the following works and implementations.
+CausalBoundingEngine integrates several state-of-the-art algorithms and methods for causal effect bounding. We gratefully acknowledge the authors and contributors of the following works and implementations.
 
 Algorithm References
 --------------------
@@ -76,14 +74,14 @@ Zaffalon Bounds
 
 **URL**: https://proceedings.mlr.press/v186/zaffalon22a/zaffalon22a.pdf
 
-**Description**: Uses credal networks to compute bounds on causal effects. The implementation leverages Java libraries CREMA and CREDICI for probabilistic inference with imprecise probabilities.
+**Description**: Uses causal EM to compute bounds on causal effects. The implementation leverages Java libraries CREMA and CREDICI for probabilistic inference with imprecise probabilities.
 
 Zhang-Bareinboim Bounds
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 **Authors**: Zhang, J., & Bareinboim, E.
 
-**Reference**: Zhang, J., & Bareinboim, E. (2018). Equality of Opportunity in Classification: A Causal Approach. *Proceedings of the 32nd Conference on Neural Information Processing Systems*.
+**Reference**: Zhang, J., & Bareinboim, E. (2021). Bounding Causal Effects on Continuous Outcome. *Proceedings of the AAAI Conference on Artificial Intelligence*, 35(13), 12207-12215.
 
 **Technical Report**: https://causalai.net/r61.pdf
 
@@ -219,12 +217,15 @@ For Zhang-Bareinboim Bounds
 
 .. code-block:: bibtex
 
-   @inproceedings{zhang2018equality,
-     title={Equality of Opportunity in Classification: A Causal Approach},
+   @inproceedings{zhang2021bounding,
+     title={Bounding Causal Effects on Continuous Outcome},
      author={Zhang, Junzhe and Bareinboim, Elias},
-     booktitle={Advances in Neural Information Processing Systems},
-     pages={2474--2484},
-     year={2018}
+     booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+     volume={35},
+     number={13},
+     pages={12207--12215},
+     year={2021},
+     month={May}
    }
 
 Acknowledgments
