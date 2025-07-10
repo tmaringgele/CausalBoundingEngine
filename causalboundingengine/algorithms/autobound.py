@@ -32,7 +32,7 @@ class Autobound(Algorithm):
         else:
             df = pd.DataFrame({'Y': Y, 'X': X})
             joint_probs = Autobound._compute_joint_probabilities_IV(df)
-            lower, upper = Autobound.run_experiment('ATE', dagstring="X -> Y, U -> X, U -> Y", unob="U", joint_probs=joint_probs)
+            lower, upper = Autobound.run_experiment('PNS', dagstring="X -> Y, U -> X, U -> Y", unob="U", joint_probs=joint_probs)
             return lower, upper
 
         
