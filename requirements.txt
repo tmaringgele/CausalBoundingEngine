@@ -7,3 +7,4 @@ pandas
 itertools
 os
 subprocess
+highspy

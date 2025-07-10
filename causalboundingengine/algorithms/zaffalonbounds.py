@@ -20,7 +20,7 @@ class Zaffalonbounds(Algorithm):
     #
     # Both libraries are distributed under the GNU LGPL-3.0 license.
     # See their respective repositories for more details.
-    
+
     def _compute_ATE(self, X: np.ndarray, Y: np.ndarray, Z: np.ndarray = None, **kwargs) -> tuple[float, float]:
         ensure_java_ready()
         if Z is not None:
@@ -66,21 +66,18 @@ class Zaffalonbounds(Algorithm):
 
     @staticmethod
     def _run_zaffalon_from_row_dict(query, isConf=False, X = None, Y = None, Z = None):
-
-        # try:
         if isConf:
-            # For confounding variables, we only need X and Y
             df = pd.DataFrame({'Y': Y, 'X': X})
         else:
             df = pd.DataFrame({'Y': Y, 'X': X, 'Z': Z})
-        bound_lower, bound_upper = Zaffalonbounds.run_experiment_binaryIV(query, df, isConf=isConf)
+        bound_lower, bound_upper = Zaffalonbounds.run_experiment(query, df, isConf=isConf)
 
         return bound_lower, bound_upper
 
 
 
     @staticmethod
-    def run_experiment_binaryIV(query, df, isConf=False):
+    def run_experiment(query, df, isConf=False):
         import jpype
         import jpype.imports
         from jpype.types import JArray, JByte

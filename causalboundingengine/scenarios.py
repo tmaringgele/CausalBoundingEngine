@@ -5,6 +5,7 @@ from causalboundingengine.algorithms.entropybounds import Entropybounds
 from causalboundingengine.algorithms.zhangbareinboim import ZhangBareinboim
 from causalboundingengine.algorithms.causaloptim import CausalOptim
 from causalboundingengine.algorithms.zaffalonbounds import Zaffalonbounds
+from causalboundingengine.algorithms.autobound import Autobound
 
 
 
@@ -18,13 +19,15 @@ class BinaryConf(Scenario):
             'tianpearl': TianPearl,
             'entropybounds': Entropybounds,
             'causaloptim': CausalOptim,
-            'zaffalonbounds': Zaffalonbounds
+            'zaffalonbounds': Zaffalonbounds,
+            'autobound': Autobound
         },
         'PNS': {
             'tianpearl': TianPearl,
             'entropybounds': Entropybounds,
             'causaloptim': CausalOptim,
-            'zaffalonbounds': Zaffalonbounds
+            'zaffalonbounds': Zaffalonbounds,
+            'autobound': Autobound
         }
     }
 
@@ -33,11 +36,13 @@ class BinaryIV(Scenario):
     AVAILABLE_ALGORITHMS = {
         'ATE': {
             'causaloptim': CausalOptim,
-            'zaffalonbounds': Zaffalonbounds
+            'zaffalonbounds': Zaffalonbounds,
+            'autobound': Autobound
         },
         'PNS': {
             'causaloptim': CausalOptim,
-            'zaffalonbounds': Zaffalonbounds
+            'zaffalonbounds': Zaffalonbounds,
+            'autobound': Autobound
         }
     }
 
