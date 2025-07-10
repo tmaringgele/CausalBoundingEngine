@@ -5,13 +5,24 @@ from causalboundingengine.algorithms.algorithm import Algorithm
 import numpy as np
 
 
-#TODO These need to be handled like with causaloptim, i.e. with Rpy2
-import jpype
-from jpype.types import JArray, JByte
+from causalboundingengine.algorithms.zaffalonbounds_util.zaffalon_setup import ensure_java_ready
 
 
 class Zaffalonbounds(Algorithm):
+    # This implementation integrates with the Java packages CREMA and CREDICI,
+    # developed and maintained by IDSIA:
+    #
+    # - CREMA:  https://github.com/IDSIA/crema
+    # - CREDICI: https://github.com/IDSIA/credici
+    #
+    # These tools are used via a JVM interface (through jpype) to compute bounds for causal queries
+    # under assumptions such as confounding or instrumental variables.
+    #
+    # Both libraries are distributed under the GNU LGPL-3.0 license.
+    # See their respective repositories for more details.
+    
     def _compute_ATE(self, X: np.ndarray, Y: np.ndarray, Z: np.ndarray = None, **kwargs) -> tuple[float, float]:
+        ensure_java_ready()
         if Z is not None:
             lower, upper = Zaffalonbounds._run_zaffalon_from_row_dict(
                 query="ATE",
@@ -32,6 +43,7 @@ class Zaffalonbounds(Algorithm):
             return lower, upper
 
     def _compute_PNS(self, X: np.ndarray, Y: np.ndarray, Z: np.ndarray = None, **kwargs) -> tuple[float, float]:
+        ensure_java_ready()
         if Z is not None:
             lower, upper = Zaffalonbounds._run_zaffalon_from_row_dict(
                 query="PNS",
@@ -54,7 +66,7 @@ class Zaffalonbounds(Algorithm):
 
     @staticmethod
     def _run_zaffalon_from_row_dict(query, isConf=False, X = None, Y = None, Z = None):
- 
+
         # try:
         if isConf:
             # For confounding variables, we only need X and Y
@@ -69,6 +81,9 @@ class Zaffalonbounds(Algorithm):
 
     @staticmethod
     def run_experiment_binaryIV(query, df, isConf=False):
+        import jpype
+        import jpype.imports
+        from jpype.types import JArray, JByte
         # Resolve path to this file
         this_dir = os.path.abspath(os.path.dirname(__file__))
         

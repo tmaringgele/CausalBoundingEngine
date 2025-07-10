@@ -8,7 +8,7 @@ from causalboundingengine.algorithms.zaffalonbounds import Zaffalonbounds
 
 
 
-#Collection of scenarios for the Causal Bounding Engine
+## Collection of scenarios for the Causal Bounding Engine
 
 # Binary Confounding
 class BinaryConf(Scenario):
