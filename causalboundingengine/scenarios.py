@@ -4,6 +4,7 @@ from causalboundingengine.algorithms.manski import Manski
 from causalboundingengine.algorithms.entropybounds import Entropybounds
 from causalboundingengine.algorithms.zhangbareinboim import ZhangBareinboim
 from causalboundingengine.algorithms.causaloptim import CausalOptim
+from causalboundingengine.algorithms.zaffalonbounds import Zaffalonbounds
 
 
 
@@ -16,12 +17,14 @@ class BinaryConf(Scenario):
             'manski': Manski,
             'tianpearl': TianPearl,
             'entropybounds': Entropybounds,
-            'causaloptim': CausalOptim
+            'causaloptim': CausalOptim,
+            'zaffalonbounds': Zaffalonbounds
         },
         'PNS': {
             'tianpearl': TianPearl,
             'entropybounds': Entropybounds,
-            'causaloptim': CausalOptim
+            'causaloptim': CausalOptim,
+            'zaffalonbounds': Zaffalonbounds
         }
     }
 
@@ -29,10 +32,12 @@ class BinaryConf(Scenario):
 class BinaryIV(Scenario):
     AVAILABLE_ALGORITHMS = {
         'ATE': {
-            'causaloptim': CausalOptim
+            'causaloptim': CausalOptim,
+            'zaffalonbounds': Zaffalonbounds
         },
         'PNS': {
-            'causaloptim': CausalOptim
+            'causaloptim': CausalOptim,
+            'zaffalonbounds': Zaffalonbounds
         }
     }
 

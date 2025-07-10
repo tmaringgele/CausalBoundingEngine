@@ -20,7 +20,6 @@ class CausalOptim(Algorithm):
         """
         ensure_r_ready(r_path)
 
-        # Example dummy logic (replace with rpy2/R code)
         if Z is not None:
             result = CausalOptim._run_experiment("ATE",
                        graph_str="(Z -+ X, X -+ Y, Ur -+ X, Ur -+ Y)", 
@@ -56,7 +55,6 @@ class CausalOptim(Algorithm):
         """
         ensure_r_ready(r_path)
 
-        # Example dummy logic (replace with rpy2/R code)
         if Z is not None:
             result = CausalOptim._run_experiment("PNS",  
                        graph_str="(Z -+ X, X -+ Y, Ur -+ X, Ur -+ Y)", 
