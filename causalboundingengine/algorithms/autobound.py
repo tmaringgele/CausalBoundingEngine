@@ -50,9 +50,8 @@ class Autobound(Algorithm):
         dag = DAG()
         dag.from_structure(dagstring, unob)   
         
-        with warnings.catch_warnings():
-            warnings.simplefilter("ignore", category=FutureWarning)
-            problem = causalProblem(dag)
+
+        problem = causalProblem(dag)
 
         problem.load_data_pandas(joint_probs)
         problem.add_prob_constraints()
