@@ -8,6 +8,15 @@ import warnings
 
 
 class Autobound(Algorithm):
+    # This module integrates code from the AutoBound project,
+    # developed by Guilherme Duarte, Dean Knox, Jonathan Mummolo, and Ilya Shpitser.
+    # 
+    # The original implementation is available at:
+    # https://www.tandfonline.com/doi/full/10.1080/01621459.2023.2216909
+    # 
+    # The code is distributed under the MIT License.
+    # Minor adjustments were made to ensure compatibility within the CausalBoundingEngine.
+
 
     def _compute_ATE(self, X: np.ndarray, Y: np.ndarray, Z: np.ndarray = None, **kwargs) -> tuple[float, float]:
         if Z is not None:
