@@ -273,22 +273,21 @@ Before using BinaryIV, validate your instrument:
    
    validate_instrument(Z, X, Y)
 
-ContIV: Continuous Instrumental Variable
+ContIV: Binary IV with Continuous Outcome
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Purpose**: Handle continuous variables in instrumental variable settings.
+**Purpose**: Handle binary instrument and treatment with continuous outcome using instrumental variable assumptions.
 
 **Causal Assumptions**:
-   - Continuous instrument Z
-   - Continuous treatment X  
-   - Continuous outcome Y
+   - Binary instrument Z ∈ {0, 1}
+   - Binary treatment X ∈ {0, 1}  
+   - Continuous outcome Y ∈ [0, 1] (bounded between 0 and 1)
    - Standard IV assumptions hold
-   - Variables will be discretized internally
 
 **Data Requirements**:
-   - ``Z``: NumPy array of continuous values (instrument)
-   - ``X``: NumPy array of continuous values (treatment)
-   - ``Y``: NumPy array of continuous values (outcome)
+   - ``Z``: NumPy array of 0s and 1s (binary instrument)
+   - ``X``: NumPy array of 0s and 1s (binary treatment)
+   - ``Y``: NumPy array of continuous values between 0 and 1 (outcome)
    - All arrays must have the same length
 
 **Usage**:
@@ -298,21 +297,12 @@ ContIV: Continuous Instrumental Variable
    from causalboundingengine.scenarios import ContIV
    import numpy as np
    
-   # Generate continuous IV data
-   np.random.seed(42)
-   n = 200
+   # Example IV data with continuous outcome
+   Z = np.array([0, 1, 1, 0, 1])  # Binary instrument
+   X = np.array([0, 1, 1, 0, 1])  # Binary treatment
+   Y = np.array([0.1, 0.8, 0.2, 0.9, 0.3])  # Continuous outcome (0-1)
    
-   # Instrument
-   Z = np.random.normal(0, 1, n)
-   
-   # Treatment (influenced by Z and unobserved U)
-   U = np.random.normal(0, 1, n)  # Unobserved confounder
-   X = 0.5 * Z + 0.3 * U + np.random.normal(0, 0.5, n)
-   
-   # Outcome (influenced by X and U)
-   Y = 0.4 * X + 0.2 * U + np.random.normal(0, 0.5, n)
-   
-   # Create continuous IV scenario
+   # Create scenario
    scenario = ContIV(X, Y, Z)
 
 **Available Algorithms**:
@@ -334,40 +324,47 @@ ContIV: Continuous Instrumental Variable
 
 .. code-block:: python
 
-   # Compute ATE bounds for continuous IV
+   # Compute ATE bounds for binary IV with continuous outcome
    ate_bounds = scenario.ATE.zhangbareinboim()
    print(f"Zhang-Bareinboim ATE bounds: {ate_bounds}")
 
 **When to Use**:
-   - Continuous instrumental variables
-   - Economic applications (e.g., distance as instrument)
-   - Natural experiments with continuous treatments
-   - When discretization is acceptable
+   - Binary instrumental variables with continuous outcomes
+   - RCTs with binary treatment and continuous response measures
+   - Economic applications with binary policy instruments
+   - When outcome is naturally continuous but bounded
+
+**Important Notes**:
+   - Z and X should be binary (0s and 1s only)
+   - Y should be continuous values between 0 and 1
+   - Algorithm may still run with non-binary Z/X but this is not the intended use
+   - For fully continuous variables, consider discretization first
 
 **Data Preprocessing**:
 
-ContIV internally discretizes continuous variables. You can also preprocess manually:
+Ensure your outcome is properly bounded:
 
 .. code-block:: python
 
-   def discretize_variable(var, n_bins=3, method='quantile'):
-       \"\"\"Discretize continuous variable.\"\"\"
-       if method == 'quantile':
-           # Equal-frequency bins
-           bin_edges = np.quantile(var, np.linspace(0, 1, n_bins + 1))
+   def prepare_continuous_outcome(Y, method='min_max'):
+       \"\"\"Prepare continuous outcome for ContIV.\"\"\"
+       if method == 'min_max':
+           # Min-max normalization to [0, 1]
+           Y_norm = (Y - Y.min()) / (Y.max() - Y.min())
+       elif method == 'sigmoid':
+           # Sigmoid transformation
+           Y_norm = 1 / (1 + np.exp(-Y))
        else:
-           # Equal-width bins
-           bin_edges = np.linspace(var.min(), var.max(), n_bins + 1)
+           raise ValueError("method must be 'min_max' or 'sigmoid'")
        
-       return np.digitize(var, bin_edges) - 1
+       return Y_norm
    
-   # Manual discretization
-   Z_discrete = discretize_variable(Z, n_bins=2)  # Binary instrument
-   X_discrete = discretize_variable(X, n_bins=2)  # Binary treatment  
-   Y_discrete = discretize_variable(Y, n_bins=2)  # Binary outcome
+   # Example usage
+   Y_raw = np.array([2.1, 5.8, 1.2, 7.9, 3.3])  # Raw continuous outcome
+   Y_bounded = prepare_continuous_outcome(Y_raw, method='min_max')
    
-   # Use with BinaryIV scenario
-   scenario_discrete = BinaryIV(X_discrete, Y_discrete, Z_discrete)
+   # Use with ContIV
+   scenario = ContIV(X, Y_bounded, Z)
 
 Scenario Selection Guide
 ------------------------
@@ -382,8 +379,8 @@ Decision Tree
 
 2. **Do you have a valid instrument?**
    
-   - Yes, binary instrument → Use BinaryIV
-   - Yes, continuous instrument → Use ContIV  
+   - Yes, binary instrument, binary outcome → Use BinaryIV
+   - Yes, binary instrument, continuous outcome → Use ContIV  
    - No instrument → Use BinaryConf
 
 3. **Can you justify IV assumptions?**
@@ -409,8 +406,8 @@ Scenario Comparison
    * - Data Type
      - Binary X, Y
      - Binary Z, X, Y
-     - Continuous Z, X, Y
-     - ContIV discretizes internally
+     - Binary Z, X; Continuous Y [0,1]
+     - ContIV for bounded outcomes
    * - Assumptions
      - Minimal
      - IV assumptions
