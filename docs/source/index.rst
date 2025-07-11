@@ -50,7 +50,7 @@ Basic usage:
 Features
 --------
 
-- **Multiple Algorithms**: Manski, Tian-Pearl, CausalOptim, AutoBound, ZhangBareinboim, Zaffalonbounds, and more
+- **Multiple Algorithms**: Manski, Tian-Pearl, Causaloptim, Autobound, ZhangBareinboim, Zaffalonbounds, and more
 - **Unified Interface**: Consistent API across all algorithms and scenarios
 - **Multiple Scenarios**: Support for confounded and instrumental variable settings
 - **External Engine Support**: Integration with R (via rpy2) and Java (via jpype1)

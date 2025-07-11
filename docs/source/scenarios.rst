@@ -230,13 +230,13 @@ BinaryIV: Binary Instrumental Variable
    autobound_ate = scenario.ATE.autobound()
    autobound_pns = scenario.PNS.autobound()
    
-   print(f"AutoBound ATE: {autobound_ate}")
-   print(f"AutoBound PNS: {autobound_pns}")
+   print(f"Autobound ATE: {autobound_ate}")
+   print(f"Autobound PNS: {autobound_pns}")
    
    # If R is available
    try:
        causaloptim_ate = scenario.ATE.causaloptim()
-       print(f"CausalOptim ATE: {causaloptim_ate}")
+       print(f"Causaloptim ATE: {causaloptim_ate}")
    except ImportError:
        print("R support not available")
 

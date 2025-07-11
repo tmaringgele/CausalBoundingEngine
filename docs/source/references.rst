@@ -6,7 +6,7 @@ CausalBoundingEngine integrates several state-of-the-art algorithms and methods 
 Algorithm References
 --------------------
 
-AutoBound
+Autobound
 ~~~~~~~~~
 
 **Authors**: Duarte, G., Finkelstein, N., Knox, D., Mummolo, J., & Shpitser, I.
@@ -15,9 +15,9 @@ AutoBound
 
 **DOI**: https://doi.org/10.1080/01621459.2023.2216909
 
-**Description**: AutoBound provides an automated approach to causal inference in discrete settings using linear programming optimization. The algorithm can handle complex causal graphs and provides tight bounds through systematic optimization.
+**Description**: Autobound provides an automated approach to causal inference in discrete settings using linear programming optimization. The algorithm can handle complex causal graphs and provides tight bounds through systematic optimization.
 
-CausalOptim
+Causaloptim
 ~~~~~~~~~~~
 
 **Authors**: Sachs, M. C., Sjölander, A., & Gabriel, E. E.
@@ -26,7 +26,7 @@ CausalOptim
 
 **Reference**: Sachs, M. C., Sjölander, A., & Gabriel, E. E. (2022). A General Method for Deriving Tight Symbolic Bounds on Causal Effects. *Journal of Computational and Graphical Statistics*, 31(2), 496-510.
 
-**Description**: CausalOptim uses symbolic computation to derive bounds on causal effects. It provides a general framework for bounding causal quantities in directed acyclic graphs with unmeasured confounders.
+**Description**: Causaloptim uses symbolic computation to derive bounds on causal effects. It provides a general framework for bounding causal quantities in directed acyclic graphs with unmeasured confounders.
 
 Entropy Bounds
 ~~~~~~~~~~~~~~
@@ -95,7 +95,7 @@ R Integration
 
 Several algorithms require R integration through the `rpy2` package:
 
-- **CausalOptim**: Requires R package `causaloptim`
+- **Causaloptim**: Requires R package `causaloptim`
 - **R Statistical Computing**: https://www.r-project.org/
 
 Java Integration
@@ -121,7 +121,7 @@ Citation Guidelines
 
 If you use CausalBoundingEngine in your research, please cite the relevant algorithm papers based on which methods you employ:
 
-For AutoBound
+For Autobound
 ~~~~~~~~~~~~~
 
 .. code-block:: bibtex
@@ -135,7 +135,7 @@ For AutoBound
      publisher={Taylor \& Francis}
    }
 
-For CausalOptim
+For Causaloptim
 ~~~~~~~~~~~~~~~
 
 .. code-block:: bibtex

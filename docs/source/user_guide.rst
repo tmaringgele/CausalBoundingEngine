@@ -158,7 +158,7 @@ These algorithms require only core Python dependencies:
    - Uses distribution inequalities
    - Available for both ATE and PNS
 
-**AutoBound**
+**Autobound**
    - Optimization-based approach
    - Uses linear programming
    - Handles complex causal graphs
@@ -169,7 +169,7 @@ R-based Algorithms
 
 These require R installation and the ``rpy2`` package:
 
-**CausalOptim**
+**Causaloptim**
    - Symbolic derivation of bounds
    - Optimization using R's ``causaloptim`` package
    - Supports both confounded and IV settings
@@ -260,7 +260,7 @@ Some algorithms accept additional parameters:
    # EntropyBounds with information constraint
    bounds = scenario.ATE.entropybounds(theta=0.5)
    
-   # CausalOptim with custom R path
+   # Causaloptim with custom R path
    bounds = scenario.ATE.causaloptim(r_path="/custom/path/to/R")
 
 Error Handling
@@ -376,8 +376,8 @@ Performance Considerations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Fast algorithms**: Manski, Tian-Pearl
-**Moderate algorithms**: EntropyBounds, AutoBound  
-**Slower algorithms**: CausalOptim, Zaffalonbounds (external engines)
+**Moderate algorithms**: EntropyBounds, Autobound  
+**Slower algorithms**: Causaloptim, Zaffalonbounds (external engines)
 
 .. code-block:: python
 
@@ -391,7 +391,7 @@ Performance Considerations
    # More sophisticated bounds for final analysis
    start = time.time()
    detailed_bounds = scenario.ATE.autobound()
-   print(f"AutoBound: {time.time() - start:.3f}s")
+   print(f"Autobound: {time.time() - start:.3f}s")
 
 Reproducibility
 ~~~~~~~~~~~~~~~

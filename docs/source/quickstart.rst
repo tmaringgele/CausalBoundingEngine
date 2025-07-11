@@ -82,7 +82,7 @@ When you have an instrumental variable, use the BinaryIV scenario:
    # Compute bounds (fewer algorithms available for IV)
    autobound_bounds = scenario.ATE.autobound()
    
-   print(f"AutoBound ATE: {autobound_bounds}")
+   print(f"Autobound ATE: {autobound_bounds}")
 
 Example 3: Algorithm Parameters
 -------------------------------
@@ -121,9 +121,9 @@ If you have R installed with the ``r`` extra:
    scenario = BinaryConf(X, Y)
    
    try:
-       # R-based CausalOptim algorithm
+       # R-based Causaloptim algorithm
        bounds = scenario.ATE.causaloptim()
-       print(f"CausalOptim bounds: {bounds}")
+       print(f"Causaloptim bounds: {bounds}")
    except ImportError as e:
        print(f"R support not available: {e}")
        print("Install with: pip install causalboundingengine[r]")

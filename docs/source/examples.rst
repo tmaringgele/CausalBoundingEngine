@@ -33,11 +33,11 @@ Simple analysis with binary confounded data:
    print("=== ATE Bounds ===")
    print(f"Manski:     {scenario.ATE.manski()}")
    print(f"Tian-Pearl: {scenario.ATE.tianpearl()}")
-   print(f"AutoBound:  {scenario.ATE.autobound()}")
+   print(f"Autobound:  {scenario.ATE.autobound()}")
    
    print("\\n=== PNS Bounds ===")
    print(f"Tian-Pearl: {scenario.PNS.tianpearl()}")
-   print(f"AutoBound:  {scenario.PNS.autobound()}")
+   print(f"Autobound:  {scenario.PNS.autobound()}")
 
 Example 2: Instrumental Variable Analysis
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -69,8 +69,8 @@ Using an instrumental variable to get tighter bounds:
    scenario = BinaryIV(X, Y, Z)
    
    print("=== IV Analysis ===")
-   print(f"AutoBound ATE:  {scenario.ATE.autobound()}")
-   print(f"AutoBound PNS:  {scenario.PNS.autobound()}")
+   print(f"Autobound ATE:  {scenario.ATE.autobound()}")
+   print(f"Autobound PNS:  {scenario.PNS.autobound()}")
    
    # Compare with confounded scenario (ignore instrument)
    scenario_conf = BinaryConf(X, Y)
@@ -307,7 +307,7 @@ Analyzing treatment effectiveness with potential confounding:
    print("\\n=== Causal Bounds (accounting for unmeasured confounding) ===")
    print(f"Manski bounds:     {scenario.ATE.manski()}")
    print(f"Tian-Pearl bounds: {scenario.ATE.tianpearl()}")
-   print(f"AutoBound:         {scenario.ATE.autobound()}")
+   print(f"Autobound:         {scenario.ATE.autobound()}")
    
    # True ATE (if we could observe severity)
    true_ate = np.mean(recovery_prob * 1 - (recovery_prob - 0.3))  # Approximate
@@ -352,7 +352,7 @@ Evaluating a job training program with instrumental variable:
    # IV Analysis
    scenario_iv = BinaryIV(training, employed, eligible)
    print("\\n=== IV Bounds ===")
-   print(f"AutoBound ATE: {scenario_iv.ATE.autobound()}")
+   print(f"Autobound ATE: {scenario_iv.ATE.autobound()}")
    
    # Compare with confounded analysis
    scenario_conf = BinaryConf(training, employed)

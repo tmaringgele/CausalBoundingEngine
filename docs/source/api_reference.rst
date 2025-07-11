@@ -87,7 +87,7 @@ TianPearl
    :undoc-members:
    :show-inheritance:
 
-AutoBound
+Autobound
 ~~~~~~~~~
 
 .. autoclass:: causalboundingengine.algorithms.autobound.Autobound
@@ -114,10 +114,10 @@ ZhangBareinboim
 External Engine Algorithms
 ---------------------------
 
-CausalOptim
+Causaloptim
 ~~~~~~~~~~~
 
-.. autoclass:: causalboundingengine.algorithms.causaloptim.CausalOptim
+.. autoclass:: causalboundingengine.algorithms.causaloptim.Causaloptim
    :members:
    :undoc-members:
    :show-inheritance:
@@ -174,7 +174,7 @@ Algorithm-Specific Parameters
 **EntropyBounds**:
    - ``theta`` (``float``): Information constraint level for mutual information
 
-**CausalOptim**:
+**Causaloptim**:
    - ``r_path`` (``str``, optional): Custom path to R executable
 
 Return Values
@@ -343,9 +343,9 @@ The package is organized as follows:
    │   ├── algorithm.py         # Base algorithm class
    │   ├── manski.py           # Manski bounds
    │   ├── tianpearl.py        # Tian-Pearl bounds
-   │   ├── autobound.py        # AutoBound algorithm
+   │   ├── autobound.py        # Autobound algorithm
    │   ├── entropybounds.py    # Entropy-based bounds
-   │   ├── causaloptim.py      # R-based CausalOptim
+   │   ├── causaloptim.py      # R-based Causaloptim
    │   ├── zaffalonbounds.py   # Java-based Zaffalonbounds
    │   └── zhangbareinboim.py  # Zhang-Bareinboim bounds
    └── utils/                   # Utility functions

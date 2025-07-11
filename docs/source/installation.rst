@@ -16,7 +16,7 @@ This provides access to most algorithms including:
 
 - Manski bounds
 - Tian-Pearl bounds  
-- AutoBound (with HiGHS solver)
+- Autobound (with HiGHS solver)
 - EntropyBounds
 
 Optional Dependencies
@@ -27,7 +27,7 @@ The package supports additional functionality through optional extras:
 R Support
 ~~~~~~~~~
 
-For R-based algorithms like CausalOptim:
+For R-based algorithms like Causaloptim:
 
 .. code-block:: bash
 
@@ -138,7 +138,7 @@ Test R integration (if installed):
    # Test R-based algorithm
    try:
        bounds = scenario.ATE.causaloptim()
-       print(f"CausalOptim bounds: {bounds}")
+       print(f"Causaloptim bounds: {bounds}")
    except ImportError:
        print("R support not available")
 

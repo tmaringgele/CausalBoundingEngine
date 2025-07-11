@@ -31,7 +31,7 @@ Algorithm Overview
      - BinaryConf
      - Core
      - Nonparametric
-   * - AutoBound
+   * - Autobound
      - ✓
      - ✓
      - BinaryConf, BinaryIV
@@ -43,7 +43,7 @@ Algorithm Overview
      - BinaryConf
      - Core
      - Requires theta parameter
-   * - CausalOptim
+   * - Causaloptim
      - ✓
      - ✓
      - BinaryConf, BinaryIV
@@ -160,7 +160,7 @@ For PNS:
    - For PNS estimation
    - As a standard nonparametric approach
 
-AutoBound
+Autobound
 ~~~~~~~~~
 
 **Reference**: Duarte, G., Finkelstein, N., Knox, D., Mummolo, J., & Shpitser, I. (2023). An Automated Approach to Causal Inference in Discrete Settings. *Journal of the American Statistical Association*, 1-12. See :doc:`references` for complete citation.
@@ -169,7 +169,7 @@ AutoBound
 
 **Mathematical Foundation**:
 
-AutoBound represents the causal problem using:
+Autobound represents the causal problem using:
    - Decision variables for each potential outcome type
    - Constraints matching observed distributions
    - Linear programming optimization
@@ -255,7 +255,7 @@ where θ is a user-specified parameter controlling the strength of confounding.
 External Engine Algorithms
 ---------------------------
 
-CausalOptim
+Causaloptim
 ~~~~~~~~~~~
 
 **Dependencies**: R, rpy2, causaloptim R package
@@ -278,7 +278,7 @@ CausalOptim
    
    try:
        bounds = scenario.ATE.causaloptim()
-       print(f"CausalOptim bounds: {bounds}")
+       print(f"Causaloptim bounds: {bounds}")
    except ImportError:
        print("R support not available")
    
@@ -430,13 +430,13 @@ Performance Characteristics
    * - TianPearl
      - Very Fast
      - Simple calculations
-   * - AutoBound
+   * - Autobound
      - Moderate
      - Linear programming
    * - EntropyBounds
      - Moderate
      - Convex optimization
-   * - CausalOptim
+   * - Causaloptim
      - Slow
      - R interface overhead
    * - Zaffalonbounds
@@ -452,7 +452,7 @@ Memory Usage
 Most algorithms have modest memory requirements, but some considerations:
 
 - **Zaffalonbounds**: May need increased JVM heap size for large datasets
-- **AutoBound**: Linear programming may use significant memory
+- **Autobound**: Linear programming may use significant memory
 - **EntropyBounds**: Convex optimization scales with data size
 
 .. code-block:: python
@@ -474,24 +474,24 @@ Decision Tree
 
 2. **Do you have an instrument?**
    
-   - Yes → Use AutoBound, CausalOptim, or Zaffalonbounds
+   - Yes → Use Autobound, Causaloptim, or Zaffalonbounds
    - No → Continue to step 3
 
 3. **What are your computational constraints?**
    
    - Need fast results → Use Manski or TianPearl
-   - Have more time → Consider AutoBound, CausalOptim, or Zaffalonbounds
+   - Have more time → Consider Autobound, Causaloptim, or Zaffalonbounds
 
 4. **What assumptions can you make?**
    
    - No assumptions → Use Manski
    - Weak confounding → Use EntropyBounds with appropriate theta
-   - Standard assumptions → Use TianPearl or AutoBound
+   - Standard assumptions → Use TianPearl or Autobound
 
 5. **What external dependencies do you have?**
    
-   - Core Python only → Use Manski, TianPearl, AutoBound, or EntropyBounds
-   - R available → Consider CausalOptim
+   - Core Python only → Use Manski, TianPearl, Autobound, or EntropyBounds
+   - R available → Consider Causaloptim
    - Java available → Consider Zaffalonbounds
 
 Robustness Strategy
