@@ -384,7 +384,7 @@ See the [References](https://causalboundingengine.readthedocs.io/en/latest/refer
 
 <div align="center">
 
-**Built with ❤️ for causal inference**
+**Built with 💙 for causal inference**
 
 [Documentation](https://causalboundingengine.readthedocs.io/) • [PyPI](https://pypi.org/project/causalboundingengine/) • [GitHub](https://github.com/yourusername/CausalBoundingEngine)
 
