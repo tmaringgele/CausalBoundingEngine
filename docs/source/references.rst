@@ -228,18 +228,6 @@ For Zhang-Bareinboim Bounds
      month={May}
    }
 
-Acknowledgments
----------------
-
-We thank all the authors and contributors of the algorithms integrated into CausalBoundingEngine. Their groundbreaking work in causal inference has made this unified framework possible.
-
-Special thanks to:
-
-- The **UCLA Causality Lab** for foundational work in causal inference
-- The **IDSIA** research institute for credal network implementations
-- The **R Core Team** and package maintainers for statistical computing infrastructure
-- The **Python scientific computing community** for essential libraries
-
 License Compatibility
 ---------------------
 

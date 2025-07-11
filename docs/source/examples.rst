@@ -198,7 +198,6 @@ Adding uncertainty quantification using bootstrap:
    import pandas as pd
    
    def bootstrap_bounds(X, Y, algorithm='manski', n_bootstrap=200, alpha=0.05):
-       \"\"\"Compute bootstrap confidence intervals for bounds.\"\"\"
        n = len(X)
        bootstrap_results = []
        
@@ -367,110 +366,110 @@ Comprehensive analysis across multiple datasets:
 
 .. code-block:: python
 
-   import numpy as np
-   import pandas as pd
-   from causalboundingengine.scenarios import BinaryConf
-   import time
-   
-   def generate_dataset(n, confounding_strength=0.5, seed=None):
-       \"\"\"Generate synthetic dataset with controllable confounding.\"\"\"
-       if seed is not None:
-           np.random.seed(seed)
-       
-       U = np.random.binomial(1, 0.5, n)
-       X = np.random.binomial(1, 0.3 + confounding_strength * U, n)
-       Y = np.random.binomial(1, 0.2 + 0.3 * X + confounding_strength * U, n)
-       
-       return X, Y
-   
-   def analyze_dataset(X, Y, dataset_id):
-       \"\"\"Analyze single dataset with multiple algorithms.\"\"\"
-       scenario = BinaryConf(X, Y)
-       algorithms = ['manski', 'tianpearl', 'autobound']
-       
-       results = []
-       for alg_name in algorithms:
-           start_time = time.time()
-           try:
-               alg_func = getattr(scenario.ATE, alg_name)
-               bounds = alg_func()
-               end_time = time.time()
-               
-               results.append({
-                   'dataset_id': dataset_id,
-                   'algorithm': alg_name,
-                   'lower_bound': bounds[0],
-                   'upper_bound': bounds[1],
-                   'width': bounds[1] - bounds[0],
-                   'computation_time': end_time - start_time,
-                   'success': True
-               })
-           except Exception as e:
-               results.append({
-                   'dataset_id': dataset_id,
-                   'algorithm': alg_name,
-                   'lower_bound': None,
-                   'upper_bound': None,
-                   'width': None,
-                   'computation_time': None,
-                   'success': False
-               })
-       
-       return results
-   
-   # Run comparison study
-   print("=== Large-Scale Comparison Study ===")
-   
-   # Generate multiple datasets
-   datasets = []
-   dataset_configs = [
-       {'n': 100, 'confounding': 0.2, 'name': 'Small, Weak confounding'},
-       {'n': 100, 'confounding': 0.8, 'name': 'Small, Strong confounding'},
-       {'n': 1000, 'confounding': 0.2, 'name': 'Large, Weak confounding'},
-       {'n': 1000, 'confounding': 0.8, 'name': 'Large, Strong confounding'},
-   ]
-   
-   all_results = []
-   for i, config in enumerate(dataset_configs):
-       print(f"Analyzing dataset {i+1}: {config['name']}")
-       
-       X, Y = generate_dataset(
-           n=config['n'], 
-           confounding_strength=config['confounding'],
-           seed=42 + i
-       )
-       
-       dataset_results = analyze_dataset(X, Y, i+1)
-       
-       # Add dataset metadata
-       for result in dataset_results:
-           result.update({
-               'sample_size': config['n'],
-               'confounding_strength': config['confounding'],
-               'dataset_name': config['name']
-           })
-       
-       all_results.extend(dataset_results)
-   
-   # Compile results
-   df_results = pd.DataFrame(all_results)
-   
-   # Summary statistics
-   print("\\n=== Summary Results ===")
-   summary = df_results[df_results['success']].groupby(['algorithm', 'confounding_strength']).agg({
-       'width': ['mean', 'std'],
-       'computation_time': ['mean', 'std']
-   }).round(4)
-   
-   print(summary)
-   
-   # Best performing algorithm by scenario
-   print("\\n=== Best Algorithm by Scenario (narrowest bounds) ===")
-   best_by_scenario = df_results[df_results['success']].loc[
-       df_results[df_results['success']].groupby(['dataset_id'])['width'].idxmin()
-   ][['dataset_name', 'algorithm', 'width']]
-   
-   print(best_by_scenario.to_string(index=False))
+    import numpy as np
+    import pandas as pd
+    from causalboundingengine.scenarios import BinaryConf
+    import time
+
+    def generate_dataset(n, confounding_strength=0.5, seed=None):
+        if seed is not None:
+            np.random.seed(seed)
+
+        U = np.random.binomial(1, 0.5, n)
+        X_prob = np.clip(0.3 + confounding_strength * U, 0, 1)
+        X = np.random.binomial(1, X_prob, n)
+        Y_prob = np.clip(0.2 + 0.3 * X + confounding_strength * U, 0, 1)
+        Y = np.random.binomial(1, Y_prob, n)
+
+        return X, Y
+
+    def analyze_dataset(X, Y, dataset_id):
+        scenario = BinaryConf(X, Y)
+        algorithms = ['manski', 'tianpearl', 'autobound']
+
+        results = []
+        for alg_name in algorithms:
+            start_time = time.time()
+            try:
+                alg_func = getattr(scenario.ATE, alg_name)
+                bounds = alg_func()
+                end_time = time.time()
+
+                results.append({
+                    'dataset_id': dataset_id,
+                    'algorithm': alg_name,
+                    'lower_bound': bounds[0],
+                    'upper_bound': bounds[1],
+                    'width': bounds[1] - bounds[0],
+                    'computation_time': end_time - start_time,
+                    'success': True
+                })
+            except Exception as e:
+                results.append({
+                    'dataset_id': dataset_id,
+                    'algorithm': alg_name,
+                    'lower_bound': None,
+                    'upper_bound': None,
+                    'width': None,
+                    'computation_time': None,
+                    'success': False
+                })
+
+        return results
+
+    # Run comparison study
+    print("=== Large-Scale Comparison Study ===")
+
+    # Generate multiple datasets
+    datasets = []
+    dataset_configs = [
+        {'n': 100, 'confounding': 0.2, 'name': 'Small, Weak confounding'},
+        {'n': 100, 'confounding': 0.8, 'name': 'Small, Strong confounding'},
+        {'n': 1000, 'confounding': 0.2, 'name': 'Large, Weak confounding'},
+        {'n': 1000, 'confounding': 0.8, 'name': 'Large, Strong confounding'},
+    ]
+
+    all_results = []
+    for i, config in enumerate(dataset_configs):
+        print(f"Analyzing dataset {i+1}: {config['name']}")
+
+        X, Y = generate_dataset(
+            n=config['n'],
+            confounding_strength=config['confounding'],
+            seed=42 + i
+        )
+
+        dataset_results = analyze_dataset(X, Y, i+1)
+
+        # Add dataset metadata
+        for result in dataset_results:
+            result.update({
+                'sample_size': config['n'],
+                'confounding_strength': config['confounding'],
+                'dataset_name': config['name']
+            })
+
+        all_results.extend(dataset_results)
+
+    # Compile results
+    df_results = pd.DataFrame(all_results)
+
+    # Summary statistics
+    print("\\n=== Summary Results ===")
+    summary = df_results[df_results['success']].groupby(['algorithm', 'confounding_strength']).agg({
+        'width': ['mean', 'std'],
+        'computation_time': ['mean', 'std']
+    }).round(4)
+
+    print(summary)
+
+    # Best performing algorithm by scenario
+    print("\\n=== Best Algorithm by Scenario (narrowest bounds) ===")
+    best_by_scenario = df_results[df_results['success']].loc[
+        df_results[df_results['success']].groupby(['dataset_id'])['width'].idxmin()
+    ][['dataset_name', 'algorithm', 'width']]
+
+    print(best_by_scenario.to_string(index=False))
 
 Specialized Use Cases
 ---------------------
@@ -487,11 +486,9 @@ Using a custom algorithm with the framework:
    from causalboundingengine.scenarios import BinaryConf
    
    class ConservativeBounds(Algorithm):
-       \"\"\"Custom algorithm that provides very conservative bounds.\"\"\"
        
        def _compute_ATE(self, X: np.ndarray, Y: np.ndarray, 
                        conservatism: float = 0.8, **kwargs) -> tuple[float, float]:
-           \"\"\"Conservative ATE bounds with adjustable conservatism.\"\"\"
            
            # Basic observed difference
            p1 = np.mean(Y[X == 1]) if np.any(X == 1) else 0.5
@@ -541,7 +538,6 @@ Robust code that handles missing R/Java dependencies:
    from causalboundingengine.scenarios import BinaryConf, BinaryIV
    
    def robust_analysis(X, Y, Z=None, prefer_external=True):
-       \"\"\"Robust analysis that falls back when external deps missing.\"\"\"
        
        if Z is None:
            scenario = BinaryConf(X, Y)
@@ -605,4 +601,4 @@ Robust code that handles missing R/Java dependencies:
                            if result['status'] == 'success']
    print(f"\\nSuccessful algorithms: {successful_algorithms}")
 
-These examples demonstrate the flexibility and power of CausalBoundingEngine across various real-world scenarios, from basic usage to advanced applications with custom algorithms and robust error handling.
+These examples demonstrate the flexibility and power of CausalBoundingEngine across various scenarios, from basic usage to advanced applications.
