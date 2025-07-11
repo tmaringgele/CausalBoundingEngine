@@ -238,7 +238,7 @@ Comparing Multiple Algorithms
 Next Steps
 ----------
 
-- Read the :doc:`user_guide` for detailed explanations of scenarios and algorithms
+- Read the :doc:`core_concepts`
 - Check :doc:`algorithms` for algorithm-specific documentation  
 - See :doc:`examples` for more complex use cases
 - Learn how to add your own algorithms in :doc:`extending`

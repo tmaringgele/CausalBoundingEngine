@@ -440,7 +440,7 @@ Performance Characteristics
      - Slow
      - R interface overhead
    * - Zaffalonbounds
-     - Slow
+     - Very Slow
      - Java interface + EM algorithm
    * - ZhangBareinboim
      - Moderate
@@ -484,9 +484,7 @@ Decision Tree
 
 4. **What assumptions can you make?**
    
-   - No assumptions → Use Manski
    - Weak confounding → Use EntropyBounds with appropriate theta
-   - Standard assumptions → Use TianPearl or Autobound
 
 5. **What external dependencies do you have?**
    
