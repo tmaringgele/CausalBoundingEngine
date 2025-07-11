@@ -22,7 +22,7 @@ CausalBoundingEngine is a modular Python package that provides a **unified inter
 ### Key Features
 
 🔧 **Unified Interface** - Consistent API across all algorithms and scenarios  
-📊 **Multiple Algorithms** - Manski, Tian-Pearl, AutoBound, Causaloptim, Zaffalonbounds, and more  
+📊 **Multiple Algorithms** - Manski, Tian-Pearl, Autobound, Causaloptim, Zaffalonbounds, and more  
 🎯 **Flexible Scenarios** - Support for confounded and instrumental variable settings  
 🔗 **External Engines** - Integration with R (rpy2) and Java (jpype1) backends  
 🚀 **Easy Extension** - Simple framework for adding new algorithms and scenarios  
@@ -34,9 +34,9 @@ CausalBoundingEngine is a modular Python package that provides a **unified inter
 |-----------|-----|-----|-----------|--------------|-----------|
 | **Manski** | ✓ | ✗ | BinaryConf | Core | Manski (1990) |
 | **Tian-Pearl** | ✓ | ✓ | BinaryConf | Core | Tian & Pearl (2000) |
-| **AutoBound** | ✓ | ✓ | BinaryConf, BinaryIV | Core | Duarte et al. (2023) |
-| **EntropyBounds** | ✓ | ✓ | BinaryConf | Core | Jiang & Shpitser (2020) |
-| **CausalOptim** | ✓ | ✓ | BinaryConf, BinaryIV | R | Sachs et al. (2022) |
+| **Autobound** | ✓ | ✓ | BinaryConf, BinaryIV | Core | Duarte et al. (2023) |
+| **Entropybounds** | ✓ | ✓ | BinaryConf | Core | Jiang & Shpitser (2020) |
+| **Causaloptim** | ✓ | ✓ | BinaryConf, BinaryIV | R | Sachs et al. (2022) |
 | **Zaffalonbounds** | ✓ | ✓ | BinaryConf, BinaryIV | Java | Zaffalon et al. (2022) |
 | **ZhangBareinboim** | ✓ | ✗ | ContIV | Core | Zhang & Bareinboim (2021) |
 
@@ -53,7 +53,7 @@ pip install causalboundingengine
 For extended functionality, install with optional dependencies:
 
 ```bash
-# R integration (CausalOptim algorithm)
+# R integration (Causaloptim algorithm)
 pip install causalboundingengine[r]
 
 # Java integration (Zaffalonbounds algorithm)  
@@ -70,7 +70,7 @@ pip install causalboundingengine[docs]
 
 For algorithms requiring external engines:
 
-**R Support** (for CausalOptim):
+**R Support** (for Causaloptim):
 ```bash
 # Ubuntu/Debian
 sudo apt install r-base
@@ -115,7 +115,7 @@ autobound_bounds = scenario.ATE.autobound()     # (-0.5, 0.5) - LP optimization
 
 print(f"Manski bounds:    {manski_bounds}")
 print(f"Tian-Pearl bounds: {tianpearl_bounds}")
-print(f"AutoBound bounds:  {autobound_bounds}")
+print(f"Autobound bounds:  {autobound_bounds}")
 ```
 
 ### Instrumental Variable Analysis
@@ -189,7 +189,7 @@ for alg in algorithms:
 ### Sensitivity Analysis
 
 ```python
-# Sensitivity analysis with EntropyBounds
+# Sensitivity analysis with Entropybounds
 thetas = [0.1, 0.5, 1.0, 2.0]
 for theta in thetas:
     bounds = scenario.ATE.entropybounds(theta=theta)
@@ -236,12 +236,12 @@ CausalBoundingEngine organizes algorithms by causal scenario:
 ### BinaryConf
 - **Use case**: Observational studies with binary treatment/outcome
 - **Assumptions**: Potential unmeasured confounding
-- **Algorithms**: Manski, TianPearl, AutoBound, EntropyBounds, CausalOptim, Zaffalonbounds
+- **Algorithms**: Manski, TianPearl, Autobound, Entropybounds, Causaloptim, Zaffalonbounds
 
 ### BinaryIV  
 - **Use case**: Instrumental variable analysis with binary variables
 - **Assumptions**: Valid instrument (relevance, exclusion, exogeneity)
-- **Algorithms**: AutoBound, CausalOptim, Zaffalonbounds
+- **Algorithms**: Autobound, Causaloptim, Zaffalonbounds
 
 ### ContIV
 - **Use case**: Binary instrument/treatment with continuous outcome [0,1]
@@ -253,10 +253,10 @@ CausalBoundingEngine organizes algorithms by causal scenario:
 ### Custom Algorithm Parameters
 
 ```python
-# EntropyBounds with custom confounding strength
+# Entropybounds with custom confounding strength
 bounds = scenario.ATE.entropybounds(theta=0.2)
 
-# CausalOptim with custom R path
+# Causaloptim with custom R path
 bounds = scenario.ATE.causaloptim(r_path="/usr/local/bin/R")
 ```
 
