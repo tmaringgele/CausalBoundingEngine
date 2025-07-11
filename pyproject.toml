@@ -12,8 +12,8 @@ dependencies = [
   "numpy",
   "cvxpy",
   "pulp",
-  "statsmodels"
-  "highspy",  # ensures autobound works by default
+  "statsmodels",
+  "highspy"
 ]
 
 [project.optional-dependencies]
@@ -26,5 +26,9 @@ docs = [
 ]
 
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=61", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["causalboundingengine*"]
