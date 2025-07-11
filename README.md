@@ -357,7 +357,7 @@ If you use CausalBoundingEngine in your research, please cite the relevant algor
   title={CausalBoundingEngine: A Unified Framework for Causal Effect Bounding},
   author={[Tobias Maringgele]},
   year={2025},
-  url={https://github.com/yourusername/CausalBoundingEngine},
+  url={https://github.com/tmaringgele/CausalBoundingEngine},
   note={Python package for causal effect bounding algorithms}
 }
 ```
