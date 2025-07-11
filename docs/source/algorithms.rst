@@ -482,7 +482,7 @@ Decision Tree
    - Need fast results → Use Manski or TianPearl
    - Have more time → Consider Autobound, Causaloptim, or Zaffalonbounds
 
-4. **What assumptions can you make?**
+4. **What (further) assumptions can you make?**
    
    - Weak confounding → Use EntropyBounds with appropriate theta
 
