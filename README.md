@@ -93,6 +93,7 @@ brew install openjdk
 ```
 
 ## Quick Start
+<sup>Note: numeric results in the examples are for illustrative porpuses and not necessarily correct.<sup>
 
 ### Basic Usage
 

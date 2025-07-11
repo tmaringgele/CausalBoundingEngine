@@ -106,6 +106,7 @@ Where to Get Help
 1. **GitHub Issues**: Bug reports and feature requests
 2. **Documentation**: Check existing docs first
 3. **Code Review**: Ask for feedback during PR process
+4. **E-Mail**: For a mortal emergency, you can contact me via email at tobias.maringgele@tum.de
 
 Communication Guidelines
 ~~~~~~~~~~~~~~~~~~~~~~~

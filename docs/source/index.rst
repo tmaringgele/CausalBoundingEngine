@@ -8,7 +8,7 @@ CausalBoundingEngine Documentation
 
 |
 
-CausalBoundingEngine is a modular Python package for comparing and applying causal bounding algorithms. It provides a unified interface for computing bounds on causal effects in scenarios with unmeasured confounding and instrumental variables.
+CausalBoundingEngine is a modular Python package for comparing and applying causal bounding algorithms. It provides a unified interface for computing bounds on causal effects in scenarios with unmeasured confounding.
 
 .. image:: https://img.shields.io/pypi/v/causalboundingengine.svg
    :target: https://pypi.org/project/causalboundingengine/
