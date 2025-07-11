@@ -8,3 +8,4 @@ itertools
 os
 subprocess
 highspy
+statsmodels

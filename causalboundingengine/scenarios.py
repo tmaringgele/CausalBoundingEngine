@@ -10,6 +10,7 @@ from causalboundingengine.algorithms.autobound import Autobound
 
 
 ## Collection of scenarios for the Causal Bounding Engine
+## Consult the documentation for more details.
 
 # Binary Confounding
 class BinaryConf(Scenario):

@@ -12,6 +12,7 @@ dependencies = [
   "numpy",
   "cvxpy",
   "pulp",
+  "statsmodels"
   "highspy",  # ensures autobound works by default
 ]
 

@@ -21,9 +21,9 @@ class TestBinaryIVScenario:
         """Test BinaryIV scenario creation."""
         scenario = BinaryIV(self.X, self.Y, self.Z)
         assert scenario is not None
-        assert len(scenario.X) == len(self.X)
-        assert len(scenario.Y) == len(self.Y)
-        assert len(scenario.Z) == len(self.Z)
+        assert len(scenario.data.X) == len(self.X)
+        assert len(scenario.data.Y) == len(self.Y)
+        assert len(scenario.data.Z) == len(self.Z)
     
     def test_autobound_algorithm(self):
         """Test AutoBound algorithm in IV setting."""
@@ -64,9 +64,9 @@ class TestContIVScenario:
         """Test ContIV scenario creation."""
         scenario = ContIV(self.X, self.Y, self.Z)
         assert scenario is not None
-        assert len(scenario.X) == len(self.X)
-        assert len(scenario.Y) == len(self.Y)
-        assert len(scenario.Z) == len(self.Z)
+        assert len(scenario.data.X) == len(self.X)
+        assert len(scenario.data.Y) == len(self.Y)
+        assert len(scenario.data.Z) == len(self.Z)
     
     def test_zhangbareinboim_algorithm(self):
         """Test Zhang-Bareinboim algorithm."""
