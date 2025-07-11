@@ -16,7 +16,7 @@ This provides access to most algorithms including:
 
 - Manski bounds
 - Tian-Pearl bounds  
-- Autobound (with HiGHS solver)
+- Autobound
 - EntropyBounds
 
 Optional Dependencies
