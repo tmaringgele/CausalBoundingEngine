@@ -65,7 +65,7 @@ Features
    
    installation
    quickstart
-   user_guide
+   core_concepts
    algorithms
    scenarios
    extending
