@@ -17,12 +17,12 @@
 
 ## Overview
 
-CausalBoundingEngine is a modular Python package that provides a **unified interface** for comparing and applying state-of-the-art causal bounding algorithms. It enables researchers and practitioners to compute bounds on causal effects when unmeasured confounding is present or when using instrumental variables.
+CausalBoundingEngine is a modular Python package that provides a **unified interface** for comparing and applying state-of-the-art causal bounding algorithms. It enables researchers and practitioners to compute bounds on causal effects when unmeasured confounding is present.
 
 ### Key Features
 
 🔧 **Unified Interface** - Consistent API across all algorithms and scenarios  
-📊 **Multiple Algorithms** - Manski, Tian-Pearl, AutoBound, CausalOptim, Zaffalonbounds, and more  
+📊 **Multiple Algorithms** - Manski, Tian-Pearl, AutoBound, Causaloptim, Zaffalonbounds, and more  
 🎯 **Flexible Scenarios** - Support for confounded and instrumental variable settings  
 🔗 **External Engines** - Integration with R (rpy2) and Java (jpype1) backends  
 🚀 **Easy Extension** - Simple framework for adding new algorithms and scenarios  
@@ -344,10 +344,10 @@ CausalBoundingEngine integrates algorithms from multiple research papers. We gra
 
 - **Manski (1990)** - Nonparametric bounds foundation
 - **Tian & Pearl (2000)** - Probability of causation bounds  
-- **Duarte et al. (2023)** - AutoBound optimization approach
+- **Duarte et al. (2023)** - Autobound optimization approach
 - **Jiang & Shpitser (2020)** - Entropy-based weak confounding
-- **Sachs et al. (2022)** - CausalOptim symbolic derivation
-- **Zaffalon et al. (2022)** - Credal network approaches
+- **Sachs et al. (2022)** - Causaloptim R library
+- **Zaffalon et al. (2022)** - Causal expectation maximisation approach
 - **Zhang & Bareinboim (2021)** - Continuous outcome bounding
 
 See the [References](https://causalboundingengine.readthedocs.io/en/latest/references.html) page for complete citations and attributions.
@@ -356,7 +356,7 @@ See the [References](https://causalboundingengine.readthedocs.io/en/latest/refer
 
 <div align="center">
 
-**Built with ❤️ for the causal inference community**
+**Built with ❤️ for causal inference**
 
 [Documentation](https://causalboundingengine.readthedocs.io/) • [PyPI](https://pypi.org/project/causalboundingengine/) • [GitHub](https://github.com/yourusername/CausalBoundingEngine)
 

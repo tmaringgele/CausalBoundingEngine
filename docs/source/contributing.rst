@@ -89,12 +89,13 @@ Questions?
 
 Thanks for contributing! 🎉
 
-Areas needing optimization:
+Areas needing optimization & feature ideas:
 
-1. **Large dataset handling**: Memory-efficient algorithms
-2. **Parallel computation**: Multi-core algorithm implementations
-3. **Approximate algorithms**: Fast approximations for exploration
-4. **Caching**: Intelligent result caching
+1. **Killing dependencies**: Get rid of dependencies (especially R/Java) or at least make everything use the same solver.
+2. **Custom DAG**: Causaloptim, Zaffalonbounds and Autobound are able to use a custom DAG as input, but this is not yet implemented in the Python interface.
+3. **Mediation**: Causaloptim, Zaffalonbounds and Autobound may be applicable to mediation scenarios.
+4. **Cool New Algorithms**: Implement new algorithms that are not yet supported.
+5. **More Symbolic bounds**: Low hanging fruit: implement more symbolic bounds (like tianpearl) for other scenarios.
 
 Getting Help
 ------------
@@ -102,10 +103,9 @@ Getting Help
 Where to Get Help
 ~~~~~~~~~~~~~~~~~
 
-1. **GitHub Discussions**: General questions and ideas
-2. **GitHub Issues**: Bug reports and feature requests
-3. **Documentation**: Check existing docs first
-4. **Code Review**: Ask for feedback during PR process
+1. **GitHub Issues**: Bug reports and feature requests
+2. **Documentation**: Check existing docs first
+3. **Code Review**: Ask for feedback during PR process
 
 Communication Guidelines
 ~~~~~~~~~~~~~~~~~~~~~~~
