@@ -300,6 +300,33 @@ The documentation includes:
 - **[Examples](https://causalboundingengine.readthedocs.io/en/latest/examples.html)** - Real-world usage examples
 - **[References](https://causalboundingengine.readthedocs.io/en/latest/references.html)** - Citations and credits
 
+## Testing
+
+CausalBoundingEngine includes a comprehensive test suite to ensure reliability. 
+
+### Quick Test Run
+
+```bash
+# Run basic tests (minimal dependencies)
+python -m pytest tests/test_dummy.py tests/test_scenarios.py::TestDataClass -v
+
+# Run core algorithm tests  
+python -m pytest tests/test_core_algorithms.py -v
+
+# Run all tests
+python -m pytest tests/ -v
+```
+
+### Test Coverage
+
+✅ **Core functionality** - Data structures, basic algorithms  
+✅ **Algorithm interfaces** - Manski, Tian-Pearl bounds  
+✅ **Scenario framework** - Data handling, dispatching  
+✅ **Integration tests** - End-to-end workflows  
+⚠️ **Optional components** - Require additional dependencies  
+
+See [`TESTING.md`](TESTING.md) for detailed testing documentation.
+
 ## Contributing
 
 We welcome contributions! The process is simple:
@@ -316,7 +343,7 @@ See our [Contributing Guide](https://causalboundingengine.readthedocs.io/en/late
 - 🔧 New algorithm implementations
 - 📊 Additional causal scenarios  
 - 🐛 Bug fixes and improvements
-- 📚 Adding some tests
+- 📚 Documentation and examples
 - 🚀 Performance optimizations
 
 ## Citation
