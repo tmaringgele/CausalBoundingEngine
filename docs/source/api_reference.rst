@@ -144,21 +144,6 @@ AlgUtil
 Constants and Types
 -------------------
 
-Common Types
-~~~~~~~~~~~~
-
-The following types are commonly used throughout the API:
-
-.. code-block:: python
-
-   from typing import Tuple
-   import numpy as np
-   
-   # Type aliases used in CausalBoundingEngine
-   BoundsResult = Tuple[float, float]
-   BinaryArray = np.ndarray  # Array of 0s and 1s
-   ContinuousArray = np.ndarray  # Array of continuous values
-
 Common Parameters
 ~~~~~~~~~~~~~~~~~
 
