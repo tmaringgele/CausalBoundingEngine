@@ -19,7 +19,7 @@ CausalBoundingEngine is a modular Python package for comparing and applying caus
    :alt: Python 3.8+
 
 .. image:: https://img.shields.io/badge/license-MIT-green.svg
-   :target: https://github.com/yourusername/CausalBoundingEngine/blob/main/LICENSE
+   :target: https://github.com/tmaringgele/CausalBoundingEngine/blob/main/LICENSE
    :alt: MIT License
 
 Quick Start

@@ -109,7 +109,7 @@ For development and contributing:
 
 .. code-block:: bash
 
-   git clone https://github.com/yourusername/CausalBoundingEngine.git
+   git clone https://github.com/tmaringgele/CausalBoundingEngine.git
    cd CausalBoundingEngine
    pip install -e .[full,docs]
 

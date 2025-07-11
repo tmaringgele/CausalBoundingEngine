@@ -386,7 +386,7 @@ See the [References](https://causalboundingengine.readthedocs.io/en/latest/refer
 
 **Built with 💙 for causal inference**
 
-[Documentation](https://causalboundingengine.readthedocs.io/) • [PyPI](https://pypi.org/project/causalboundingengine/) • [GitHub](https://github.com/yourusername/CausalBoundingEngine)
+[Documentation](https://causalboundingengine.readthedocs.io/) • [PyPI](https://pypi.org/project/causalboundingengine/) • [GitHub](https://github.com/tmaringgele/CausalBoundingEngine)
 
 </div>
 
