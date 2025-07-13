@@ -6,11 +6,7 @@
 
 **A unified Python framework for causal effect bounding algorithms**
 
-[![PyPI version](https://img.shields.io/pypi/v/causalboundingengine.svg)](https://pypi.org/project/causalboundingengine/)  
-[![Python 3.12+](https://img.shields.io/badge/python-3.12%2B%20recommended-blue.svg)](https://www.python.org/downloads/)  
-[![Documentation](https://img.shields.io/badge/docs-readthedocs-brightgreen.svg)](https://causalboundingengine.readthedocs.io/)  
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://raw.githubusercontent.com/tmaringgele/CausalBoundingEngine/main/LICENSE)  
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/tmaringgele/CausalBoundingEngine)
+[![PyPI version](https://img.shields.io/pypi/v/causalboundingengine.svg)](https://pypi.org/project/causalboundingengine/) [![Python 3.12+](https://img.shields.io/badge/python-3.12%2B%20recommended-blue.svg)](https://www.python.org/downloads/) [![Documentation](https://img.shields.io/badge/docs-readthedocs-brightgreen.svg)](https://causalboundingengine.readthedocs.io/) [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://raw.githubusercontent.com/tmaringgele/CausalBoundingEngine/main/LICENSE) [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?logo=github)](https://github.com/tmaringgele/CausalBoundingEngine)
 
 [**Documentation**](https://causalboundingengine.readthedocs.io/) | 
 [**Quick Start**](https://github.com/tmaringgele/CausalBoundingEngine#quick-start) | 
