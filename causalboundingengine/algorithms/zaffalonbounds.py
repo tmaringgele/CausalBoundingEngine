@@ -87,8 +87,8 @@ class Zaffalonbounds(Algorithm):
         
 
         # Resolve jars relative to this file
-        jar_zaffalon = os.path.join(this_dir, "zaffalonbounds_util", "zaffalon", "zaffalon.jar")
-        jar_credici = os.path.join(this_dir, "zaffalonbounds_util", "credici.jar")
+        jar_zaffalon = os.path.join(this_dir, "zaffalonbounds_util", 'zaffalon', "zaffalon.jar")
+        jar_credici = os.path.join(this_dir, "zaffalonbounds_util",  "credici.jar")
         if not jpype.isJVMStarted():
             jpype.startJVM(classpath=[jar_zaffalon, jar_credici])
 
