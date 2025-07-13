@@ -13,7 +13,8 @@ dependencies = [
   "cvxpy",
   "pulp",
   "statsmodels",
-  "highspy"
+  "highspy",
+  "pyomo"
 ]
 
 [project.optional-dependencies]

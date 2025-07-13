@@ -9,3 +9,4 @@ os
 subprocess
 highspy
 statsmodels
+pyomo

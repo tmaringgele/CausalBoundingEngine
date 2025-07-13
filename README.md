@@ -7,7 +7,7 @@
 **A unified Python framework for causal effect bounding algorithms**
 
 [![PyPI version](https://img.shields.io/pypi/v/causalboundingengine.svg)](https://pypi.org/project/causalboundingengine/)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Python 3.12+](https://img.shields.io/badge/python-3.12%2B%20recommended-blue.svg)](https://www.python.org/downloads/)
 [![Documentation](https://img.shields.io/badge/docs-readthedocs-brightgreen.svg)](https://causalboundingengine.readthedocs.io/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
@@ -41,6 +41,9 @@ CausalBoundingEngine is a modular Python package that provides a **unified inter
 | **ZhangBareinboim** | ✓ | ✗ | ContIV | Core | Zhang & Bareinboim (2021) |
 
 ## Installation
+
+> **🐍 For smooth sailing, Python 3.12 or greater is recommended.**  
+> While CausalBoundingEngine supports Python 3.8+, you may encounter issues in some specific situations with older versions.
 
 ### Core Package
 
