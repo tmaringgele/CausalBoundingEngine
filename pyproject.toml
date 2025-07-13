@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "A framework for causal bounding algorithms"
 authors = [{ name = "Tobias Maringgele", email = "tobias.maringgele@tum.de" }]
 readme = "README.md"
-license = { text = "MIT" }
+license = { file = "LICENSE" }
 requires-python = ">=3.8"
 
 dependencies = [
