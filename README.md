@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![CausalBoundingEngine Logo](cbe_logo.png)
+![CausalBoundingEngine Logo](https://raw.githubusercontent.com/tmaringgele/CausalBoundingEngine/refs/heads/main/cbe_logo.png)
 
 **A unified Python framework for causal effect bounding algorithms**
 
