@@ -96,6 +96,8 @@ Areas needing optimization & feature ideas:
 3. **Mediation**: Causaloptim, Zaffalonbounds and Autobound may be applicable to mediation scenarios.
 4. **Cool New Algorithms**: Implement new algorithms that are not yet supported.
 5. **More Symbolic bounds**: Low hanging fruit: implement more symbolic bounds (like tianpearl) for other scenarios.
+6. **Extract symbols from causaloptim**: Currently, causaloptim does not expose the symbols used in the bounds (but rather directly evaluates them), so it is not possible to use them in the Python interface. This would be a great addition.
+
 
 Getting Help
 ------------
