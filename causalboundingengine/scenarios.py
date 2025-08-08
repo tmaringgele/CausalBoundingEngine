@@ -17,7 +17,6 @@ class BinaryConf(Scenario):
     AVAILABLE_ALGORITHMS = {
         'ATE': {
             'manski': Manski,
-            'tianpearl': TianPearl,
             'entropybounds': Entropybounds,
             'causaloptim': CausalOptim,
             'zaffalonbounds': Zaffalonbounds,
