@@ -114,11 +114,9 @@ scenario = BinaryConf(X, Y)
 
 # Compute ATE bounds with different algorithms
 manski_bounds = scenario.ATE.manski()           # (-1.0, 1.0) - Most conservative
-tianpearl_bounds = scenario.ATE.tianpearl()     # (-0.75, 0.75) - Tighter bounds
 autobound_bounds = scenario.ATE.autobound()     # (-0.5, 0.5) - LP optimization
 
 print(f"Manski bounds:    {manski_bounds}")
-print(f"Tian-Pearl bounds: {tianpearl_bounds}")
 print(f"Autobound bounds:  {autobound_bounds}")
 ```
 
@@ -172,7 +170,7 @@ Y = np.random.binomial(1, 0.6, n)
 scenario = BinaryConf(X, Y)
 
 # Compare multiple algorithms
-algorithms = ['manski', 'tianpearl', 'autobound', 'entropybounds']
+algorithms = ['manski', 'autobound', 'entropybounds']
 results = {}
 
 for alg in algorithms:
@@ -185,7 +183,6 @@ for alg in algorithms:
 
 # Output:
 # manski          ATE bounds: (-0.7, 0.7)
-# tianpearl       ATE bounds: (-0.4, 0.4)  
 # autobound       ATE bounds: (-0.3, 0.3)
 # entropybounds   ATE bounds: (-0.2, 0.2)
 ```
@@ -214,7 +211,7 @@ def robust_analysis(X, Y, Z=None):
     """Run multiple algorithms for robustness."""
     if Z is None:
         scenario = BinaryConf(X, Y)
-        algorithms = ['manski', 'tianpearl', 'autobound']
+        algorithms = ['manski', 'autobound']
     else:
         scenario = BinaryIV(X, Y, Z)  
         algorithms = ['autobound']  # Add 'causaloptim', 'zaffalonbounds' if available
@@ -240,7 +237,7 @@ CausalBoundingEngine organizes algorithms by causal scenario:
 ### BinaryConf
 - **Use case**: Observational studies with binary treatment/outcome
 - **Assumptions**: Potential unmeasured confounding
-- **Algorithms**: Manski, TianPearl, Autobound, Entropybounds, Causaloptim, Zaffalonbounds
+- **Algorithms**: Manski, Autobound, Entropybounds, Causaloptim, Zaffalonbounds
 
 ### BinaryIV  
 - **Use case**: Instrumental variable analysis with binary variables
@@ -272,7 +269,7 @@ print("ATE algorithms:", scenario.get_algorithms('ATE'))
 print("PNS algorithms:", scenario.get_algorithms('PNS'))
 
 # Dynamic algorithm access
-algorithm_name = 'tianpearl'
+algorithm_name = 'manski'
 if algorithm_name in scenario.get_algorithms('ATE'):
     bounds = getattr(scenario.ATE, algorithm_name)()
 ```
