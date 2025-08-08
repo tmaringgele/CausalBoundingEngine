@@ -26,11 +26,11 @@ Algorithm Overview
      - Core
      - Most conservative
    * - TianPearl
-     - ✓
+     - ✗
      - ✓
      - BinaryConf
      - Core
-     - Nonparametric
+     - PNS only
    * - Autobound
      - ✓
      - ✓
@@ -113,17 +113,9 @@ Tian-Pearl Bounds
 
 **Reference**: Tian, J., & Pearl, J. (2000). Probabilities of Causation: Bounds and Identification. *Annals of Mathematics and Artificial Intelligence*, 28(1-4), 287-313. See :doc:`references` for complete citation.
 
-**Description**: Nonparametric bounds that use the joint distribution of treatment and outcome to derive tighter bounds than Manski, particularly for PNS.
+**Description**: Nonparametric bounds that use the joint distribution of treatment and outcome to derive bounds for PNS (Probability of Necessity and Sufficiency).
 
 **Mathematical Foundation**:
-
-For ATE:
-
-.. math::
-   
-   ATE_{lower} = P(Y=1|X=1) - (1 - P(Y=1|X=0))
-   
-   ATE_{upper} = (1 - P(Y=1|X=0)) - P(Y=1|X=1)
 
 For PNS:
 
@@ -144,21 +136,18 @@ For PNS:
    Y = np.array([1, 0, 1, 0, 1])
    scenario = BinaryConf(X, Y)
    
-   ate_bounds = scenario.ATE.tianpearl()
    pns_bounds = scenario.PNS.tianpearl()
-   print(f"Tian-Pearl ATE: {ate_bounds}")
    print(f"Tian-Pearl PNS: {pns_bounds}")
 
 **Properties**:
-   - Often tighter than Manski bounds
-   - Available for both ATE and PNS
+   - Only available for PNS
    - Fast computation
    - No additional parameters
+   - Nonparametric approach
 
 **When to use**:
-   - When you want tighter bounds than Manski
    - For PNS estimation
-   - As a standard nonparametric approach
+   - When you need nonparametric PNS bounds
 
 Autobound
 ~~~~~~~~~
@@ -429,7 +418,7 @@ Performance Characteristics
      - Simple calculations
    * - TianPearl
      - Very Fast
-     - Simple calculations
+     - Simple calculations (PNS only)
    * - Autobound
      - Moderate
      - Linear programming
@@ -479,7 +468,7 @@ Decision Tree
 
 3. **What are your computational constraints?**
    
-   - Need fast results → Use Manski or TianPearl
+   - Need fast results → Use Manski (ATE) or TianPearl (PNS)
    - Have more time → Consider Autobound, Causaloptim, or Zaffalonbounds
 
 4. **What (further) assumptions can you make?**
@@ -488,7 +477,7 @@ Decision Tree
 
 5. **What external dependencies do you have?**
    
-   - Core Python only → Use Manski, TianPearl, Autobound, or EntropyBounds
+   - Core Python only → Use Manski, Autobound, or EntropyBounds (ATE); TianPearl (PNS)
    - R available → Consider Causaloptim
    - Java available → Consider Zaffalonbounds
 
@@ -503,7 +492,7 @@ For important analyses, consider using multiple algorithms:
        \"\"\"Run multiple algorithms for robustness.\"\"\"
        if Z is None:
            scenario = BinaryConf(X, Y)
-           algorithms = ['manski', 'tianpearl', 'autobound']
+           algorithms = ['manski', 'autobound']
        else:
            scenario = BinaryIV(X, Y, Z)
            algorithms = ['autobound', 'causaloptim', 'zaffalonbounds']

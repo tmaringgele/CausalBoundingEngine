@@ -33,17 +33,14 @@ Let's start with a basic example where we have treatment and outcome data, but s
    
    # Compute ATE bounds using different algorithms
    manski_bounds = scenario.ATE.manski()
-   tianpearl_bounds = scenario.ATE.tianpearl()
    
    print(f"Manski bounds: {manski_bounds}")
-   print(f"Tian-Pearl bounds: {tianpearl_bounds}")
 
 Output:
 
 .. code-block:: text
 
    Manski bounds: (-0.7, 0.7)
-   Tian-Pearl bounds: (-0.1, 0.9)
 
 Available Algorithms for BinaryConf
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -56,7 +53,7 @@ Available Algorithms for BinaryConf
 
 .. code-block:: text
 
-   ATE algorithms: ['manski', 'tianpearl', 'entropybounds', 'causaloptim', 'zaffalonbounds', 'autobound']
+   ATE algorithms: ['manski', 'entropybounds', 'causaloptim', 'zaffalonbounds', 'autobound']
    PNS algorithms: ['tianpearl', 'entropybounds', 'causaloptim', 'zaffalonbounds', 'autobound']
 
 Example 2: Instrumental Variable Setting
@@ -215,7 +212,7 @@ Comparing Multiple Algorithms
    scenario = BinaryConf(X, Y)
    
    # Compare multiple algorithms
-   algorithms = ['manski', 'tianpearl', 'autobound']
+   algorithms = ['manski', 'autobound']
    results = []
    
    for alg_name in algorithms:
@@ -284,7 +281,7 @@ Common Patterns
    def robustness_check(X, Y, algorithms=None):
        """Check robustness across multiple algorithms."""
        if algorithms is None:
-           algorithms = ['manski', 'tianpearl', 'autobound']
+           algorithms = ['manski', 'autobound']
        
        scenario = BinaryConf(X, Y)
        bounds_list = []

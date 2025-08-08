@@ -32,7 +32,6 @@ Simple analysis with binary confounded data:
    # Compute bounds using different algorithms
    print("=== ATE Bounds ===")
    print(f"Manski:     {scenario.ATE.manski()}")
-   print(f"Tian-Pearl: {scenario.ATE.tianpearl()}")
    print(f"Autobound:  {scenario.ATE.autobound()}")
    
    print("\\n=== PNS Bounds ===")
@@ -96,7 +95,7 @@ Systematic comparison of multiple algorithms:
    scenario = BinaryConf(X, Y)
    
    # Compare algorithms
-   algorithms = ['manski', 'tianpearl', 'autobound']
+   algorithms = ['manski', 'autobound']
    results = []
    
    for alg_name in algorithms:
@@ -305,7 +304,6 @@ Analyzing treatment effectiveness with potential confounding:
    
    print("\\n=== Causal Bounds (accounting for unmeasured confounding) ===")
    print(f"Manski bounds:     {scenario.ATE.manski()}")
-   print(f"Tian-Pearl bounds: {scenario.ATE.tianpearl()}")
    print(f"Autobound:         {scenario.ATE.autobound()}")
    
    # True ATE (if we could observe severity)
@@ -385,7 +383,7 @@ Comprehensive analysis across multiple datasets:
 
     def analyze_dataset(X, Y, dataset_id):
         scenario = BinaryConf(X, Y)
-        algorithms = ['manski', 'tianpearl', 'autobound']
+        algorithms = ['manski', 'autobound']
 
         results = []
         for alg_name in algorithms:
@@ -550,9 +548,9 @@ Robust code that handles missing R/Java dependencies:
        
        # Priority order: external algorithms first if preferred
        if prefer_external:
-           algorithm_priority = ['causaloptim', 'zaffalonbounds', 'autobound', 'tianpearl', 'manski']
+           algorithm_priority = ['causaloptim', 'zaffalonbounds', 'autobound', 'manski']
        else:
-           algorithm_priority = ['manski', 'tianpearl', 'autobound', 'causaloptim', 'zaffalonbounds']
+           algorithm_priority = ['manski', 'autobound', 'causaloptim', 'zaffalonbounds']
        
        for alg_name in algorithm_priority:
            if alg_name in available_algorithms:

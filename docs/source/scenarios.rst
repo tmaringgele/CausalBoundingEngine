@@ -109,9 +109,9 @@ BinaryConf: Binary Confounded
      - ✗
      - Most conservative bounds
    * - tianpearl
+     - ✗
      - ✓
-     - ✓
-     - Nonparametric bounds
+     - PNS bounds only
    * - entropybounds
      - ✓
      - ✓
@@ -135,11 +135,9 @@ BinaryConf: Binary Confounded
 
    # Compute ATE bounds with different algorithms
    manski_bounds = scenario.ATE.manski()
-   tianpearl_bounds = scenario.ATE.tianpearl()
    entropy_bounds = scenario.ATE.entropybounds(theta=0.5)
    
    print(f"Manski: {manski_bounds}")
-   print(f"Tian-Pearl: {tianpearl_bounds}")
    print(f"Entropy (θ=0.5): {entropy_bounds}")
    
    # Compute PNS bounds
@@ -452,7 +450,6 @@ You can create custom scenarios for specialized use cases:
        AVAILABLE_ALGORITHMS = {
            'ATE': {
                'manski': Manski,
-               'tianpearl': TianPearl,
            },
            'PNS': {
                'tianpearl': TianPearl,
