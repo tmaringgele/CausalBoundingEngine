@@ -198,10 +198,10 @@ for theta in thetas:
     print(f"θ={theta}: bounds={bounds}, width={width:.3f}")
 
 # Output shows how bounds widen as assumptions weaken:
-# θ=0.1: bounds=(-0.15, 0.15), width=0.300
-# θ=0.3: bounds=(-0.25, 0.25), width=0.500  
-# θ=0.6: bounds=(-0.35, 0.35), width=0.700
-# θ=0.8: bounds=(-0.45, 0.45), width=0.900
+# θ=0.1: bounds=(-0.15, 0.15), width=0.735
+# θ=0.3: bounds=(-0.25, 0.25), width=0.995  
+# θ=0.6: bounds=(-0.35, 0.35), width=1.000
+# θ=0.8: bounds=(-0.45, 0.45), width=1.000
 ```
 
 ### Robust Analysis Workflow
