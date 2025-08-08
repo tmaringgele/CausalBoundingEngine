@@ -329,7 +329,7 @@ python -m pytest tests/ -v
 ✅ **Integration tests** - End-to-end workflows  
 ⚠️ **Optional components** - Require additional dependencies  
 
-See [`TESTING.md`](TESTING.md) for detailed testing documentation.
+See [`TESTING.md`](https://github.com/tmaringgele/CausalBoundingEngine/blob/main/TESTING.md) for detailed testing documentation.
 
 ## Contributing
 
@@ -368,7 +368,7 @@ If you use CausalBoundingEngine in your research, please cite the relevant algor
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/tmaringgele/CausalBoundingEngine/blob/main/LICENSE) file for details.
 
 ## Acknowledgments
 
