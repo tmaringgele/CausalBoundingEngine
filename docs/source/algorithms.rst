@@ -195,7 +195,7 @@ Autobound represents the causal problem using:
 EntropyBounds
 ~~~~~~~~~~~~~
 
-**Reference**: Jiang, Z., & Shpitser, I. (2020). Approximate Causal Effect Identification under Weak Confounding. *Proceedings of the 37th International Conference on Machine Learning*, 4740-4750. See :doc:`references` for complete citation.
+**Reference**: Jiang, Z., Wei, L., & Kocaoglu, M. (2023). Approximate Causal Effect Identification under Weak Confounding. *Proceedings of the 40th International Conference on Machine Learning*, PMLR 202:15125-15143. See :doc:`references` for complete citation.
 
 **Description**: Uses mutual information constraints to bound causal effects under the assumption of "weak confounding" - limited dependence between confounders and observed variables.
 

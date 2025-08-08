@@ -36,7 +36,7 @@ CausalBoundingEngine is a modular Python package that provides a **unified inter
 | **Manski** | ✓ | ✗ | BinaryConf | Core | Manski (1990) |
 | **Tian-Pearl** | ✗ | ✓ | BinaryConf | Core | Tian & Pearl (2000) |
 | **Autobound** | ✓ | ✓ | BinaryConf, BinaryIV | Core | Duarte et al. (2023) |
-| **Entropybounds** | ✓ | ✓ | BinaryConf | Core | Jiang & Shpitser (2020) |
+| **Entropybounds** | ✓ | ✓ | BinaryConf | Core | Jiang et al. (2023) |
 | **Causaloptim** | ✓ | ✓ | BinaryConf, BinaryIV | R | Sachs et al. (2022) |
 | **Zaffalonbounds** | ✓ | ✓ | BinaryConf, BinaryIV | Java | Zaffalon et al. (2022) |
 | **ZhangBareinboim** | ✓ | ✗ | ContIV | Core | Zhang & Bareinboim (2021) |
@@ -374,7 +374,7 @@ CausalBoundingEngine integrates algorithms from multiple research papers. We gra
 - **Manski (1990)** - Nonparametric bounds foundation
 - **Tian & Pearl (2000)** - Probability of causation bounds  
 - **Duarte et al. (2023)** - Autobound optimization approach
-- **Jiang & Shpitser (2020)** - Entropy-based weak confounding
+- **Jiang et al. (2023)** - Entropy-based weak confounding
 - **Sachs et al. (2022)** - Causaloptim R library
 - **Zaffalon et al. (2022)** - Causal expectation maximisation approach
 - **Zhang & Bareinboim (2021)** - Continuous outcome bounding

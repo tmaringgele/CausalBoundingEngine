@@ -31,11 +31,11 @@ Causaloptim
 Entropy Bounds
 ~~~~~~~~~~~~~~
 
-**Authors**: Jiang, Z., & Shpitser, I.
+**Authors**: Jiang, Z., Wei, L., & Kocaoglu, M.
 
 **Repository**: https://github.com/ziwei-jiang/Approximate-Causal-Effect-Identification-under-Weak-Confounding
 
-**Reference**: Jiang, Z., & Shpitser, I. (2020). Approximate Causal Effect Identification under Weak Confounding. *Proceedings of the 37th International Conference on Machine Learning*, 4740-4750.
+**Reference**: Jiang, Z., Wei, L., & Kocaoglu, M. (2023). Approximate Causal Effect Identification under Weak Confounding. *Proceedings of the 40th International Conference on Machine Learning*, PMLR 202:15125-15143.
 
 **Description**: Provides bounds on causal effects under weak confounding assumptions using entropy-based constraints. The method allows for partial identification when traditional approaches would fail.
 
@@ -156,12 +156,15 @@ For Entropy Bounds
 
 .. code-block:: bibtex
 
-   @inproceedings{jiang2020approximate,
+   @inproceedings{jiang2023approximate,
      title={Approximate Causal Effect Identification under Weak Confounding},
-     author={Jiang, Ziwei and Shpitser, Ilya},
-     booktitle={Proceedings of the 37th International Conference on Machine Learning},
-     pages={4740--4750},
-     year={2020}
+     author={Jiang, Ziwei and Wei, Lai and Kocaoglu, Murat},
+     booktitle={Proceedings of the 40th International Conference on Machine Learning},
+     pages={15125--15143},
+     year={2023},
+     volume={202},
+     series={Proceedings of Machine Learning Research},
+     publisher={PMLR}
    }
 
 For Manski Bounds
