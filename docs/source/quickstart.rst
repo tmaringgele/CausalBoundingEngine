@@ -98,10 +98,10 @@ Some algorithms accept additional parameters:
    
    # EntropyBounds with different theta values
    bounds_strict = scenario.ATE.entropybounds(theta=0.1)  # Strict constraint
-   bounds_loose = scenario.ATE.entropybounds(theta=1.0)   # Loose constraint
+   bounds_loose = scenario.ATE.entropybounds(theta=0.9)   # Loose constraint
    
    print(f"Strict bounds (θ=0.1): {bounds_strict}")
-   print(f"Loose bounds (θ=1.0): {bounds_loose}")
+   print(f"Loose bounds (θ=0.9): {bounds_loose}")
 
 Example 4: R-based Algorithms
 ------------------------------

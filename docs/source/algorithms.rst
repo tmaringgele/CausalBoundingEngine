@@ -222,13 +222,13 @@ where θ is a user-specified parameter controlling the strength of confounding.
    
    # Different theta values give different bounds
    strict_bounds = scenario.ATE.entropybounds(theta=0.1)  # Strong assumption
-   loose_bounds = scenario.ATE.entropybounds(theta=1.0)   # Weak assumption
+   loose_bounds = scenario.ATE.entropybounds(theta=0.9)   # Weak assumption
    
    print(f"Strict bounds (θ=0.1): {strict_bounds}")
-   print(f"Loose bounds (θ=1.0): {loose_bounds}")
+   print(f"Loose bounds (θ=0.9): {loose_bounds}")
 
 **Parameters**:
-   - **theta** (float): Information constraint level. Lower values give tighter bounds but require stronger assumptions.
+   - **theta** (float): Information constraint level in [0, 1]. Lower values give tighter bounds but require stronger assumptions.
 
 **Properties**:
    - Requires theta parameter (no default)

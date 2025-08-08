@@ -204,7 +204,7 @@ Invalid parameters raise ``ValueError`` or ``TypeError``:
 .. code-block:: python
 
    try:
-       bounds = scenario.ATE.entropybounds(theta=-1.0)  # Invalid theta
+       bounds = scenario.ATE.entropybounds(theta=-1.0)  # Invalid theta (must be in [0,1])
    except ValueError as e:
        print(f"Invalid parameter: {e}")
 
