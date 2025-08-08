@@ -78,9 +78,9 @@ For binary outcomes, the ATE bounds are:
 
 .. math::
    
-   ATE_{lower} = \max(P(Y=1|X=1) - P(Y=1|X=0) - 1, -1)
+   ATE_{lower} = P(Y=1 \mid X=1) \cdot P(X=1) - P(Y=1 \mid X=0) \cdot P(X=0) - P(X=1)
    
-   ATE_{upper} = \min(P(Y=1|X=1) - P(Y=1|X=0) + 1, 1)
+   ATE_{upper} = P(Y=1 \mid X=1) \cdot P(X=1) + P(X=0) - P(Y=1 \mid X=0) \cdot P(X=0)
 
 **Usage**:
 

@@ -34,7 +34,7 @@ CausalBoundingEngine is a modular Python package that provides a **unified inter
 | Algorithm | ATE | PNS | Scenarios | Dependencies | Reference |
 |-----------|-----|-----|-----------|--------------|-----------|
 | **Manski** | ✓ | ✗ | BinaryConf | Core | Manski (1990) |
-| **Tian-Pearl** | ✓ | ✓ | BinaryConf | Core | Tian & Pearl (2000) |
+| **Tian-Pearl** | ✗ | ✓ | BinaryConf | Core | Tian & Pearl (2000) |
 | **Autobound** | ✓ | ✓ | BinaryConf, BinaryIV | Core | Duarte et al. (2023) |
 | **Entropybounds** | ✓ | ✓ | BinaryConf | Core | Jiang & Shpitser (2020) |
 | **Causaloptim** | ✓ | ✓ | BinaryConf, BinaryIV | R | Sachs et al. (2022) |
