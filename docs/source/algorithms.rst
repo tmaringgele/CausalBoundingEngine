@@ -197,7 +197,7 @@ EntropyBounds
 
 **Reference**: Jiang, Z., Wei, L., & Kocaoglu, M. (2023). Approximate Causal Effect Identification under Weak Confounding. *Proceedings of the 40th International Conference on Machine Learning*, PMLR 202:15125-15143. See :doc:`references` for complete citation.
 
-**Description**: Uses mutual information constraints to bound causal effects under the assumption of "weak confounding" - limited dependence between confounders and observed variables.
+**Description**: Uses mutual information constraints to bound causal effects under the assumption of "weak confounding" - The confounder entropy is lower than some θ.
 
 **Mathematical Foundation**:
 
@@ -205,9 +205,9 @@ The algorithm constrains the mutual information between potential outcomes and t
 
 .. math::
    
-   I(Y(0), Y(1); X) \leq \theta
+   H(U) \leq \theta
 
-where θ is a user-specified parameter controlling the strength of confounding.
+where θ is a user-specified parameter controlling the strength of confounding (i.e. it's entropy).
 
 **Usage**:
 
